@@ -1,6 +1,8 @@
 {
     "conventionalCommits.scopes": [
         "docs",
-        "config/dependencies"
+        "config/dependencies",
+        "assets",
+        "layout"
     ]
 }
