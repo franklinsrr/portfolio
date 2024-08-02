@@ -3,6 +3,9 @@
         "docs",
         "config/dependencies",
         "assets",
-        "layout"
+        "layout",
+        "constants",
+        "components",
+        "pages"
     ]
 }
