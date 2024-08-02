@@ -7,6 +7,7 @@
         "constants",
         "components",
         "pages",
-        "conventional commits"
+        "conventional commits",
+        "interfaces"
     ]
 }
