@@ -28,6 +28,19 @@ export default {
 					green: "#43D9AD",
 					pink: "#E99287",
 					purple: "#C98BDF"
+				},
+				button: {
+					default: "#1C2B3A",
+					primary: "#FEA55F",
+					ghost: "#FFFFFF"
+				},
+				buttonHover: {
+					default: "#263B50",
+					primary: "#FFAC6B",
+					ghost: "#FFFFFF"
+				},
+				buttonText: {
+					primary: "#01080E"
 				}
 			}
 
