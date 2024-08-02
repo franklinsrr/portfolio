@@ -8,6 +8,7 @@
         "components",
         "pages",
         "conventional commits",
-        "interfaces"
+        "interfaces",
+        "git"
     ]
 }
