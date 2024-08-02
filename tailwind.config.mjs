@@ -10,9 +10,27 @@ export default {
 				"fire-code-semi-bold": ["Fira Code semi-bold"],
 				"fire-code-bold": ["Fira Code bold"],
 				"fire-code-vf": ["Fira Code VF"],
-				firacode: {
+			},
+			colors: {
+				primary: {
+					DEFAULT: "#011627",
+					dark: "#011221",
+					darked: "#01080E"
+				},
+				secondary: {
+					gray: "#607B96",
+					green: "#3C9D93",
+					blue: "#4D5BCE",
+					white: "#FFFFFF",
+				},
+				accent: {
+					orange: "#FEA55F",
+					green: "#43D9AD",
+					pink: "#E99287",
+					purple: "#C98BDF"
 				}
 			}
+
 		},
 	},
 	plugins: [],
