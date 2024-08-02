@@ -6,6 +6,7 @@
         "layout",
         "constants",
         "components",
-        "pages"
+        "pages",
+        "conventional commits"
     ]
 }
