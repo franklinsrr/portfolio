@@ -1,0 +1,25 @@
+---
+import {ButtonVariant} from "@interfaces/themes"
+
+interface Props{
+    variant?: ButtonVariant;
+}
+
+const {variant = ButtonVariant.default} = Astro.props;
+
+let styles = "bg-button-default text-white hover:bg-buttonHover-default";
+
+    if(variant === ButtonVariant.primary) styles = "bg-button-primary hover:bg-buttonHover-primary text-primary-darked";
+    
+    if(variant === ButtonVariant.ghost) styles = "bg-transparent border-white border-[1px] hover:border-white/50 text-white";
+---
+
+<button class={`${styles} rounded-lg font-custom-size font-fire-code-normal px-3.5 py-2.5 transition-colors`}>
+    <slot />
+</button>
+
+<style>
+    .font-custom-size{
+        font-size: 14px;    
+    }
+</style>
