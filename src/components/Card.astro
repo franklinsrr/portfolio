@@ -1,0 +1,34 @@
+---
+import LinkButton from "./LinkButton.astro";
+import Technologies from "./Technologie.astro"
+import { Tech } from "@interfaces/components";
+
+interface Props{
+    tech: Tech,
+    description: string;
+    link: string;
+    imgsrc?: string,
+}
+
+const {tech, description,link, imgsrc = "/test-card-image.png"} = Astro.props;
+
+---
+
+<section class="relative rounded-[15px] bg-primary-dark w-[100%] max-w-[370px] min-w-[291px] border-[1px] border-linescolor">
+    <div class="absolute right-[18px] top-[18px]">
+        <Technologies tech={tech} />
+    </div>
+    <img src={imgsrc} alt="test">
+    <div class="p-6 pb-8">
+        <p class="block text-secondary-gray font-fire-code-normal text-lg pb-5">
+            {description}
+        </p>
+        <LinkButton href={link}>
+            view-project
+        </LinkButton>
+    </div>
+</section>
+
+<style>
+
+</style>
