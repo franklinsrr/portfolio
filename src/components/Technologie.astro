@@ -1,0 +1,13 @@
+---
+import type { Tech } from '@interfaces/components'
+import { SVG_WITH_BG } from '@constants/svg';
+
+interface Props{
+    tech: Tech
+}
+
+const{tech} = Astro.props;
+const svgImage = SVG_WITH_BG[tech];
+---
+
+<img src={svgImage.src}/ alt={tech}>
