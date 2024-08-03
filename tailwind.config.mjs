@@ -41,7 +41,8 @@ export default {
 				},
 				buttonText: {
 					primary: "#01080E"
-				}
+				},
+				linescolor: "#1e2d3d"
 			}
 
 		},
