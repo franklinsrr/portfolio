@@ -3,6 +3,7 @@ import { clsx } from 'clsx';
 
 interface Props{
     link?: string;
+    blank?: boolean;
     bigText?: boolean; 
     leftBorder?: boolean;
     rightBorder?: boolean
@@ -10,11 +11,11 @@ interface Props{
     active?: boolean;
 }
 
-const { link,bigText, leftBorder, rightBorder, large, active} = Astro.props;
+const { link, blank, bigText, leftBorder, rightBorder, large, active} = Astro.props;
 ---
 
 {link?
-<a href={link} class={clsx("group font-fire-code-retina font-custom-normal-size flex items-center h-[49px] px-6 text-secondary-gray hover:text-white hover:bg-link-hover-background ", 
+<a href={link} target={blank? "_blank": "_self"} class={clsx("group font-fire-code-retina font-custom-normal-size flex items-center h-[49px] px-6 text-secondary-gray hover:text-white hover:bg-link-hover-background ", 
     active ? "text-white border-b-button-primary border-b-2 bg-link-hover-background" : "text-secondary-gray",
     bigText ? "font-custom-big-size" : "font-custom-size",
     {
