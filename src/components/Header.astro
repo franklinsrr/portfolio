@@ -1,0 +1,25 @@
+---
+import Link from "./Link.astro"
+---
+
+<header class="h-[49px] w-full flex justify-between border-b-[1px] border-b-linescolor">
+    <div class="flex">
+        <Link link="/" large rightBorder>
+            Franklin Rodriguez
+        </Link>
+        <Link link="/" rightBorder>
+            _hello
+        </Link>
+        <Link link="/about" rightBorder active>
+            _about me
+        </Link>
+        <Link link="/projects" rightBorder>
+            _projects
+        </Link>
+    </div>
+    <div>
+        <Link link="/contact" leftBorder>
+            _contact me
+        </Link>
+    </div>
+</header>
