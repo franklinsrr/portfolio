@@ -5,12 +5,17 @@ export enum ButtonVariant {
 }
 
 // Text
-export enum HeaderTextColor {
+export enum TextColor {
     Primary = "Primary",
     SecondaryWhite = "Secondary white",
 }
-
-export enum HeaderTextSize {
+export enum TextSize {
     Normal = "Normal",
     xl = "XL"
+}
+
+export enum BorderSide {
+    Right = "Right",
+    Left = "Left",
+    None = "None"
 }
