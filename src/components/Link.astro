@@ -1,0 +1,49 @@
+---
+import { clsx } from 'clsx';
+
+interface Props{
+    link?: string;
+    bigText?: boolean; 
+    leftBorder?: boolean;
+    rightBorder?: boolean
+    large?: boolean;
+    active?: boolean;
+}
+
+const { link,bigText, leftBorder, rightBorder, large, active} = Astro.props;
+---
+
+{link?
+<a href={link} class={clsx("group font-fire-code-retina font-custom-normal-size flex items-center h-[49px] px-6 text-secondary-gray hover:text-white hover:bg-link-hover-background ", 
+    active ? "text-white border-b-button-primary border-b-2 bg-link-hover-background" : "text-secondary-gray",
+    bigText ? "font-custom-big-size" : "font-custom-size",
+    {
+        "border-r-[1px] border-linescolor": rightBorder, 
+        "border-l-[1px] border-linescolor": leftBorder, 
+        "min-w-[310px] text-left": large,
+    },
+)}>
+    <slot />
+</a>:
+<span class={clsx("font-fire-code-retina font-custom-normal-size flex items-center h-[49px] px-6 text-secondary-gray", 
+    active ? "text-white border-b-button-primary border-b-2 bg-link-hover-background" : "text-secondary-gray",
+    bigText ? "font-custom-big-size" : "font-custom-size",
+    {
+        "border-r-[1px] border-linescolor": rightBorder, 
+        "border-l-[1px] border-linescolor": leftBorder, 
+        "min-w-[310px] text-left": large,
+    },
+)}>
+    <slot />
+</span>
+}
+
+<style>
+    .font-custom-normal-size{
+        font-size: 13px;
+    }
+
+    .font-custom-big-size{
+        font-size: 16px;
+    }
+</style>
