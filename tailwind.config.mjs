@@ -10,6 +10,7 @@ export default {
 				"fire-code-semi-bold": ["Fira Code semi-bold"],
 				"fire-code-bold": ["Fira Code bold"],
 				"fire-code-vf": ["Fira Code VF"],
+				"fire-code-retina": ["Fira Code Retina"],
 			},
 			colors: {
 				primary: {
@@ -42,6 +43,7 @@ export default {
 				buttonText: {
 					primary: "#01080E"
 				},
+				"link-hover-background": "#1e2d3d74",
 				linescolor: "#1e2d3d"
 			}
 
