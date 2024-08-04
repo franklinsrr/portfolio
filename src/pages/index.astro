@@ -1,18 +1,13 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Card from "@components/Card.astro"
-import { Tech } from '@interfaces/components';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
 ---
 
 <Layout title="Franklin Rodriguez">
-	<main class="flex justify-center items-center flex-col ">
-		<h1>hello project init!</h1>
-		<br>
-		<Card 
-			link='www.google.com'
-			description='Duis aute irure dolor in velit esse cillum dolore.'
-			tech={Tech.React}
-		/>
+	<main class="flex justify-center items-center flex-col gap-64 text-center w-[100wv] h-[100vh] px-9">
+			<Header/>
+			<Footer/>
 	</main>
 </Layout>
 
