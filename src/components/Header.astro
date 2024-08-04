@@ -1,24 +1,26 @@
 ---
 import Link from "./Link.astro"
+
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="h-[49px] w-full flex justify-between border-b-[1px] border-b-linescolor">
     <div class="flex">
         <Link link="/" large rightBorder>
-            Franklin Rodriguez
+            franklin-rodriguez
         </Link>
-        <Link link="/" rightBorder>
+        <Link link="/" rightBorder active={currentPath === "/"}>
             _hello
         </Link>
-        <Link link="/about" rightBorder active>
+        <Link link="/about" rightBorder active={currentPath === "/about"} >
             _about me
         </Link>
-        <Link link="/projects" rightBorder>
+        <Link link="/projects" rightBorder active={currentPath === "/projects"}>
             _projects
         </Link>
     </div>
     <div>
-        <Link link="/contact" leftBorder>
+        <Link link="/contact" leftBorder active={currentPath === "/contact"}>
             _contact me
         </Link>
     </div>
