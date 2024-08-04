@@ -6,12 +6,14 @@ interface Props{
     blank?: boolean;
     bigText?: boolean; 
     leftBorder?: boolean;
-    rightBorder?: boolean
+    rightBorder?: boolean;
+    bottomBorder?: boolean;
     large?: boolean;
+    full?: boolean;
     active?: boolean;
 }
 
-const { link, blank, bigText, leftBorder, rightBorder, large, active} = Astro.props;
+const { link, blank, bigText, leftBorder, rightBorder, bottomBorder, large, full, active} = Astro.props;
 ---
 
 {link?
@@ -21,7 +23,9 @@ const { link, blank, bigText, leftBorder, rightBorder, large, active} = Astro.pr
     {
         "border-r-[1px] border-linescolor": rightBorder, 
         "border-l-[1px] border-linescolor": leftBorder, 
+        "border-b-[1px] border-linescolor": bottomBorder, 
         "min-w-[310px] text-left": large,
+        "w-[100%]": full
     },
 )}>
     <slot />
@@ -33,6 +37,7 @@ const { link, blank, bigText, leftBorder, rightBorder, large, active} = Astro.pr
         "border-r-[1px] border-linescolor": rightBorder, 
         "border-l-[1px] border-linescolor": leftBorder, 
         "min-w-[310px] text-left": large,
+        "w-full": full
     },
 )}>
     <slot />
@@ -40,11 +45,5 @@ const { link, blank, bigText, leftBorder, rightBorder, large, active} = Astro.pr
 }
 
 <style>
-    .font-custom-normal-size{
-        font-size: 14px;
-    }
 
-    .font-custom-big-size{
-        font-size: 16px;
-    }
 </style>
