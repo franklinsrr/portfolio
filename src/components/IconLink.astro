@@ -10,6 +10,6 @@ interface Props{
 const {href, customClasses, active} = Astro.props;
 ---
 
-<a href={href} class={clsx("mt-6 group w-full flex justify-center items-center opacity-40 hover:opacity-100", customClasses, {"opacity-100": active})}>
+<a href={href} class={clsx("mt-6 group w-full flex justify-center items-center opacity-40 hover:opacity-100", customClasses, {"!opacity-100": active})}>
     <slot/>
 </a>
