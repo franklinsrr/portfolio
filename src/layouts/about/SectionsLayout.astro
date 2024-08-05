@@ -1,0 +1,10 @@
+---
+import AboutAsideSections from "@components/AboutAsideSections.astro"
+import CodeSnippersAside from "@components/CodeSnippetsAside.astro"
+---
+
+<div class="flex h-[calc(100vh-64px-100px)]">
+    <AboutAsideSections/>
+    <slot/>
+    <CodeSnippersAside/>
+</div>
