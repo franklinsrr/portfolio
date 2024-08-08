@@ -1,14 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import SectionsLayout from "@layouts/about/SectionsLayout.astro"
+import ProfessionalInfoLayout from '@layouts/about/professional-info/ProfessionalInfoLayout.astro';
 ---
-
 <Layout title="Franklin Rodriguez">
-	<SectionsLayout>
-		<h1>about</h1>
-	</SectionsLayout>
+    <SectionsLayout>
+        <ProfessionalInfoLayout>
+            <div>
+                <p>
+                    professional info
+                </p>
+            </div>
+        </ProfessionalInfoLayout>
+    </SectionsLayout>
 </Layout>
-
-<style>
-	
-</style>
