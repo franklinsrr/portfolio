@@ -1,10 +1,11 @@
 ---
-import AboutArticleSections from "@components/AboutArticleSections.astro"
+import ArticlesMenu from "@components/about/ArticlesMenu.astro";
+import { HOBBIES_LINKS } from "@constants/links";
 ---
 
 <div class="flex h-[calc(100vh-64px-109px)]">
-    <aside class="h-[calc(100vh-64px-109px)]">
-        <AboutArticleSections />
+    <aside class="h-[calc(100vh-64px-109px)] border-r-[1px] border-r-linescolor">
+            <ArticlesMenu title="hobbies-info" links={HOBBIES_LINKS}/>
     </aside>
     <slot/>
 </div>
