@@ -2,20 +2,21 @@
 import terminalSVG from "@assets/terminal-icon.svg";
 import personalInfoSVG from "@assets/personal-info-icon.svg";
 import gameSVG from "@assets/game-icon.svg";
-import IconLink from "./IconLink.astro";
+import IconLink from "../IconLink.astro";
 import {ABOUT_SECTIONS} from "@constants/links"
 
 const pathname = Astro.url.pathname;
+
 ---
 
 <aside class="w-[63px] border-r-[1px] border-linescolor flex flex-col items-center">
-    <IconLink href={ABOUT_SECTIONS.professionalInfo} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.professionalInfo === pathname}>
+    <IconLink href={ABOUT_SECTIONS.professionalInfo} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.professionalInfo === pathname || pathname.includes("/about/professional-info") }>
         <img src={terminalSVG.src} alt="professional information" width="20px" height="18px">
     </IconLink>
-    <IconLink href={ABOUT_SECTIONS.personalInfo} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.personalInfo === pathname}>
+    <IconLink href={ABOUT_SECTIONS.personalInfo} customClasses="mt-6 w-full" active={pathname.includes(ABOUT_SECTIONS.personalInfo)}>
         <img src={personalInfoSVG.src} alt="personal information" width="16px" height="24px">
     </IconLink>
-    <IconLink href={ABOUT_SECTIONS.hobbies} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.hobbies === pathname}>
+    <IconLink href={ABOUT_SECTIONS.hobbies} customClasses="mt-6 w-full" active={pathname.includes(ABOUT_SECTIONS.hobbies )}>
         <img src={gameSVG.src} alt="hobbies" width="22px" height="16px">
     </IconLink>
 </aside>
