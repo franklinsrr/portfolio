@@ -13,7 +13,7 @@ const currentPath = Astro.url.pathname;
         <Link link="/" rightBorder active={currentPath === "/"}>
             _hello
         </Link>
-        <Link link="/about" rightBorder active={currentPath === "/about"} >
+        <Link link="/about" rightBorder active={currentPath.includes("/about")} >
             _about me
         </Link>
         <Link link="/projects" rightBorder active={currentPath === "/projects"}>
