@@ -11,6 +11,7 @@
       "@pages/*": ["src/pages/*"],
       "@layouts/*": ["src/layouts/*"],
       "@interfaces/*": ["src/interfaces/*"],
+      "@store/*": ["src/store/*"],
     }
   }
 }
