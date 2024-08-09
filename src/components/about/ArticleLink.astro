@@ -11,7 +11,7 @@ const {link, isActive} = Astro.props;
 ---
 <a 
     href={link.href} 
-    class={clsx("!text-secondary-gray font-fire-code-normal font-custom-normal-size flex gap-3",
+    class={clsx("text-secondary-gray font-fire-code-normal font-custom-normal-size flex gap-3 hover:text-white",
         { "!text-white": isActive}
         )}
 >
