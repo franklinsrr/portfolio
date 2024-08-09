@@ -2,6 +2,9 @@ import pinkFolderSVG from "@assets/pink-folder-icon.svg";
 import greenFolderSVG from "@assets/green-folder-icon.svg";
 import purpleFolderSVG from "@assets/purple-folder-icon.svg";
 import degreeSVG from "@assets/degree-icon.svg"
+import phoneSVG from "@assets/phone-icon.svg";
+import emailSVG from "@assets/mail-icon.svg"
+import linkSVG from "@assets/link-icon.svg"
 
 export const ABOUT_SECTIONS = {
     professionalInfo: "/about",
@@ -79,3 +82,32 @@ export const HOBBIES_LINKS: ArticleLink[] = [
     },
 ]
 
+export const CONTACT_LINKS: ArticleLink[] = [
+    {
+        title: "email",
+        href: "mailto: franklinserif@gmail.com",
+        toggle: false,
+        src: emailSVG.src
+    },
+    {
+        title: "phone",
+        href: "tel:+4733378901",
+        toggle: false,
+        src: phoneSVG.src
+    }
+]
+
+export const SOCIAL_MEDIA_LINKS: ArticleLink[] = [
+    {
+        title: "instagram",
+        href: "https://www.instagram.com/franklinserif/",
+        toggle: false,
+        src: linkSVG.src
+    },
+    {
+        title: "twitch",
+        href: "https://www.twitch.tv/franklingra",
+        toggle: false,
+        src: linkSVG.src
+    },
+]
