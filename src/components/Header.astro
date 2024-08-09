@@ -14,7 +14,7 @@ const currentPath = Astro.url.pathname;
             _hello
         </Link>
         <Link link="/about" rightBorder active={currentPath.includes("/about")} >
-            _about me
+            _about-me
         </Link>
         <Link link="/projects" rightBorder active={currentPath === "/projects"}>
             _projects
@@ -22,7 +22,7 @@ const currentPath = Astro.url.pathname;
     </div>
     <div class="hidden lg:flex">
         <Link link="/contact" leftBorder active={currentPath === "/contact"}>
-            _contact me
+            _contact-me
         </Link>
     </div>
 
@@ -32,13 +32,13 @@ const currentPath = Astro.url.pathname;
             _hello
         </Link>
         <Link link="/about" bottomBorder active={currentPath === "/about"} >
-            _about me
+            _about-me
         </Link>
         <Link link="/projects" bottomBorder active={currentPath === "/projects"}>
             _projects
         </Link>
         <Link link="/contact" bottomBorder active={currentPath === "/contact"}>
-            _contact me
+            _contact-me
         </Link>
     </>
    </HamburgerMenu>
