@@ -10,6 +10,7 @@
         "conventional commits",
         "interfaces",
         "git",
-        "styles"
+        "styles",
+        "store"
     ]
 }
