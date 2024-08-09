@@ -1,0 +1,12 @@
+---
+import AsideProject from "@components/projects/AsideProject"
+
+---
+
+<div class="flex h-[calc(100vh-64px-100px)] ">
+    <AsideProject client:load/>
+    <slot/>
+    <aside>
+        code snippets
+    </aside>
+</div>
