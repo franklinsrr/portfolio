@@ -1,0 +1,29 @@
+---
+import ArticleLink from "@components/about/ArticleLink.astro"
+import ContactMenu from "@components/ContactMenu.astro"
+import MenuTitle from "@components/MenuTitle.astro"
+import { SOCIAL_MEDIA_LINKS } from "@constants/links"
+---
+
+<div class="flex h-[calc(100vh-64px-100px)] ">
+    <aside class=" w-[310px] pl-3 border-r-[1px] border-r-linescolor">
+        <ContactMenu />
+        <MenuTitle>
+            find-me-also-in
+        </MenuTitle>
+        <ul class="flex flex-col gap-3 px-3 py-2">
+           {
+            SOCIAL_MEDIA_LINKS.map((link) => (
+            <li class="">
+                   <ArticleLink link={link} isActive={false}/>
+            </li>
+
+            ))
+           }
+        </ul>
+    </aside>
+    <slot/>
+    <aside>
+
+    </aside>
+</div>
