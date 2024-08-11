@@ -1,6 +1,13 @@
 ---
+import Scrollbar from "./scrollbar.astro"
 ---
 
-<aside>
-    code snippets aside sections
+<aside class="border-l-[1px] border-l-linescolor flex-wrap w-full">
+    <div class="h-[35px] border-b-[1px] border-b-linescolor w-full"></div>
+    <section class="flex w-full ">
+        <div class="w-full">
+            code snippets aside sections
+        </div>
+        <Scrollbar/>
+    </section>
 </aside>

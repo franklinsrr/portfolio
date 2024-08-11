@@ -9,14 +9,14 @@ const pathname = Astro.url.pathname;
 
 ---
 
-<aside class="hidden lg:flex w-[63px] border-r-[1px] border-linescolor flex-col items-center">
-    <IconLink href={ABOUT_SECTIONS.professionalInfo} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.professionalInfo === pathname || pathname.includes("/about/professional-info") }>
+<aside class="hidden lg:block lg:!w-[64px] border-r-[1px] border-linescolor flex-col items-center">
+    <IconLink href={ABOUT_SECTIONS.professionalInfo} customClasses="mt-6 w-[64px]" active={ABOUT_SECTIONS.professionalInfo === pathname || pathname.includes("/about/professional-info") }>
         <img src={terminalSVG.src} alt="professional information" width="20px" height="18px">
     </IconLink>
-    <IconLink href={ABOUT_SECTIONS.personalInfo} customClasses="mt-6 w-full" active={pathname.includes(ABOUT_SECTIONS.personalInfo)}>
+    <IconLink href={ABOUT_SECTIONS.personalInfo} customClasses="mt-6 w-[64px]" active={pathname.includes(ABOUT_SECTIONS.personalInfo)}>
         <img src={personalInfoSVG.src} alt="personal information" width="16px" height="24px">
     </IconLink>
-    <IconLink href={ABOUT_SECTIONS.hobbies} customClasses="mt-6 w-full" active={pathname.includes(ABOUT_SECTIONS.hobbies )}>
+    <IconLink href={ABOUT_SECTIONS.hobbies} customClasses="mt-6 w-[64px]" active={pathname.includes(ABOUT_SECTIONS.hobbies )}>
         <img src={gameSVG.src} alt="hobbies" width="22px" height="16px">
     </IconLink>
 </aside>
