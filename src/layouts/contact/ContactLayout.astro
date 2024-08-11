@@ -2,16 +2,27 @@
 import ArticleLink from "@components/about/ArticleLink.astro"
 import ContactMenu from "@components/ContactMenu.astro"
 import MenuTitle from "@components/MenuTitle.astro"
-import { SOCIAL_MEDIA_LINKS } from "@constants/links"
+import ResponsiveContact from "@components/ResponsiveContact"
+import { SOCIAL_MEDIA_LINKS, CONTACT_LINKS } from "@constants/links"
+
 ---
 
-<div class="flex h-[calc(100vh-64px-100px)] ">
-    <aside class=" w-[310px] pl-3 border-r-[1px] border-r-linescolor">
-        <ContactMenu />
-        <MenuTitle>
-            find-me-also-in
-        </MenuTitle>
-        <ul class="flex flex-col gap-3 px-3 py-2">
+<div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap">
+    <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full">
+        <div class="hidden lg:block">
+
+            <ContactMenu>
+                <MenuTitle>
+                    contacts
+                </MenuTitle>
+            </ContactMenu>
+        </div>
+        <div class="hidden lg:block">
+            <MenuTitle>
+                find-me-also-in
+            </MenuTitle>
+        </div>
+        <ul class=" flex-col gap-3 px-3 py-2 hidden lg:flex">
            {
             SOCIAL_MEDIA_LINKS.map((link) => (
             <li class="">
@@ -21,9 +32,33 @@ import { SOCIAL_MEDIA_LINKS } from "@constants/links"
             ))
            }
         </ul>
+        <span class="h-[70px] font-fire-code-retina text-white flex justify-start items-center pl-6 lg:hidden">
+            _contacts
+        </span>
+        <ResponsiveContact client:only title="_contacts">
+            <ul class=" flex-col gap-3 px-3 py-2">
+                {
+                 CONTACT_LINKS.map((link) => (
+                 <li class="mb-2">
+                        <ArticleLink link={link} isActive={false}/>
+                 </li>
+     
+                 ))
+                }
+             </ul>
+        </ResponsiveContact>
+        <ResponsiveContact client:only title="find-me-also-in">
+            <ul class=" flex-col gap-3 px-3 py-2">
+                {
+                 SOCIAL_MEDIA_LINKS.map((link) => (
+                 <li class="mb-2">
+                        <ArticleLink link={link} isActive={false}/>
+                 </li>
+     
+                 ))
+                }
+             </ul>
+        </ResponsiveContact>
     </aside>
     <slot/>
-    <aside>
-
-    </aside>
 </div>
