@@ -9,7 +9,7 @@ const pathname = Astro.url.pathname;
 
 ---
 
-<aside class="w-[63px] border-r-[1px] border-linescolor flex flex-col items-center">
+<aside class="hidden lg:flex w-[63px] border-r-[1px] border-linescolor flex-col items-center">
     <IconLink href={ABOUT_SECTIONS.professionalInfo} customClasses="mt-6 w-full" active={ABOUT_SECTIONS.professionalInfo === pathname || pathname.includes("/about/professional-info") }>
         <img src={terminalSVG.src} alt="professional information" width="20px" height="18px">
     </IconLink>
