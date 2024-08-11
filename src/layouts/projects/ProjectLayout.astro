@@ -1,10 +1,13 @@
 ---
 import AsideProject from "@components/projects/AsideProject"
+import MenuTitle from "@components/MenuTitle.astro"
 
 ---
 
-<div class="flex h-[calc(100vh-64px-100px)] ">
-    <AsideProject client:load/>
+<div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap ">
+    <AsideProject client:load>
+        <MenuTitle>projects</MenuTitle>
+    </AsideProject>
     <slot/>
     <aside>
         code snippets
