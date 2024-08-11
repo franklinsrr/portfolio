@@ -1,10 +1,10 @@
 ---
 import ArticleLink from "./ArticleLink.astro";
-import ContactMenu from "@components/ContactMenu.astro";
+import ContactMenu from "@components/ContactMenu.astro"
 import MenuTitle from "@components/MenuTitle.astro";
 
 interface Props{
-    title: string;
+    title?: string;
     links: ArticleLink[]
 }
 
@@ -13,16 +13,20 @@ const pathname = Astro.url.pathname;
 const {title, links} = Astro.props;
 
 ---
-<section class="w-[246px] h-[calc(100vh-64px-109px)] border-l-[1px] border-l-linescolor">
-    <MenuTitle>
-        {title}
-    </MenuTitle>
-    <div class="border-b-[1px] border-b-linescolor flex flex-col px-3 py-2 gap-2">
+<section class="lg:w-[246px] lg:h-[calc(100vh-64px-109px)] border-l-[1px] border-l-linescolor">
+  {title && ( 
+        <MenuTitle>
+            {title}
+        </MenuTitle>
+    )}
+    <div class="lg:border-b-[1px] lg:border-b-linescolor flex flex-col px-3 py-2 gap-2">
         {
             links.map((link)=> (
                 <ArticleLink link={link} isActive={link.href === pathname}/>
             ))
         }
     </div>
-    <ContactMenu/>
+    <section class="hidden lg:block">
+        <ContactMenu/>
+    </section>
 </section>
