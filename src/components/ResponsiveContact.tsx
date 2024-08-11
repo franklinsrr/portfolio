@@ -14,7 +14,7 @@ const ResponsiveContact: FC<Props> = ({ children, title }) => {
     }
 
     return (
-        <div className="w-full sm:block lg:hidden">
+        <div className="w-full sm:block lg:hidden mb-1">
             <ToggleTitle isOpen={isOpen} onClick={handleClick}>
                 {title}
             </ToggleTitle>
