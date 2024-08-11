@@ -1,10 +1,12 @@
 ---
 import SubPageMenu from "@components/about/SubPageMenu.astro"
 import CodeSnippersAside from "@components/CodeSnippetsAside.astro"
+import ResponsiveAboutMenu from "@components/ResponsiveAboutMenu.astro"
 ---
 
-<div class="flex h-[calc(100vh-64px-100px)]">
+<div class="flex h-[calc(100vh-64px-100px)] flex-wrap lg:flex-nowrap" >
     <SubPageMenu/>
+    <ResponsiveAboutMenu/>
     <slot/>
     <CodeSnippersAside/>
 </div>
