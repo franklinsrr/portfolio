@@ -12,6 +12,7 @@
         "git",
         "styles",
         "store",
-        "utils"
+        "utils",
+        "refact"
     ]
 }
