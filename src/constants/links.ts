@@ -5,6 +5,7 @@ import degreeSVG from "@assets/degree-icon.svg"
 import phoneSVG from "@assets/phone-icon.svg";
 import emailSVG from "@assets/mail-icon.svg"
 import linkSVG from "@assets/link-icon.svg"
+import type { ArticleLink } from "@interfaces/links";
 
 export const ABOUT_SECTIONS = {
     professionalInfo: "/about",
