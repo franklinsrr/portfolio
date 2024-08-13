@@ -1,4 +1,4 @@
-interface ArticleLink {
+export interface ArticleLink {
     title: string;
     href: string;
     toggle: boolean;
