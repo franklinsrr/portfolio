@@ -1,0 +1,20 @@
+---
+import SecondLevelMenu from "@components/about/SecondLevelMenu.astro"
+import ThirdLevelMenu from "@components/about/ThirdLevelMenu"
+import CodeSnippersAside from "@components/CodeSnippetsAside.astro"
+
+const pathname = Astro.url.pathname;
+---
+
+<div class="h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-3 w-full">
+    <aside class="flex h-full w-[310px] border-r-[1px] border-r-linescolor">
+        <SecondLevelMenu/>
+        <ThirdLevelMenu client:load pathname={pathname} /> 
+    </aside>
+    <main class="flex">
+        <slot/>
+    </main>
+    <aside>
+        <CodeSnippersAside/>
+    </aside>
+</div>
