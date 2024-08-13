@@ -12,6 +12,7 @@
       "@layouts/*": ["src/layouts/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@store/*": ["src/store/*"],
+      "@utils/*": ["src/utils/*"],
     }
   }
 }
