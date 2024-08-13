@@ -11,6 +11,7 @@
         "interfaces",
         "git",
         "styles",
-        "store"
+        "store",
+        "utils"
     ]
 }
