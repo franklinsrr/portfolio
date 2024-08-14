@@ -22,7 +22,6 @@ const ThirdLevelMenu: FC<Props> = ({ pathname }) => {
                 {title}
             </ToggleTitle>
             <section className="w-full pl-3 flex gap-2 flex-col">
-
                 {
                     links?.map((link) => (
                         <ThirdLevelLink link={link} key={link.title} isActive={pathname === link.href} />
