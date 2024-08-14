@@ -4,7 +4,7 @@ import downWhiteIconSVG from "@assets/down-white-arrow-icon.svg";
 
 interface Props {
     children: React.ReactNode;
-    onClick: () => void
+    onClick: () => void;
 }
 
 const ToggleTitle: FC<Props> = ({ children, onClick }) => {
