@@ -1,64 +1,10 @@
 ---
-import ArticleLink from "@components/about/ArticleLink.astro"
-import ContactMenu from "@components/ContactMenu.astro"
-import MenuTitle from "@components/MenuTitle.astro"
-import ResponsiveContact from "@components/ResponsiveContact"
-import { SOCIAL_MEDIA_LINKS, CONTACT_LINKS } from "@constants/links"
-
+import ContactMenu from "@components/menu/ContactMenu"
 ---
 
 <div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap">
     <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full">
-        <div class="hidden lg:block">
-
-            <ContactMenu>
-                <MenuTitle>
-                    contacts
-                </MenuTitle>
-            </ContactMenu>
-        </div>
-        <div class="hidden lg:block lg:border-t-[1px] lg:border-t-linescolor sm:w-full">
-            <MenuTitle>
-                find-me-also-in
-            </MenuTitle>
-        </div>
-        <ul class=" flex-col gap-3 px-3 py-2 hidden lg:flex">
-           {
-            SOCIAL_MEDIA_LINKS.map((link) => (
-            <li class="">
-                   <ArticleLink link={link} isActive={false}/>
-            </li>
-
-            ))
-           }
-        </ul>
-        <span class="h-[70px] font-fire-code-retina text-white flex justify-start items-center pl-6 lg:hidden">
-            _contacts
-        </span>
-        <ResponsiveContact client:only title="_contacts">
-            <ul class=" flex-col gap-3 px-3 py-2">
-                {
-                 CONTACT_LINKS.map((link) => (
-                 <li class="mb-2">
-                        <ArticleLink link={link} isActive={false}/>
-                 </li>
-     
-                 ))
-                }
-             </ul>
-        </ResponsiveContact>
-        <ResponsiveContact client:only title="find-me-also-in">
-            <ul class=" flex-col gap-3 px-3 py-2">
-                {
-                 SOCIAL_MEDIA_LINKS.map((link) => (
-                 <li class="mb-2">
-                        <ArticleLink link={link} isActive={false}/>
-                 </li>
-     
-                 ))
-                }
-             </ul>
-        </ResponsiveContact>
+        <ContactMenu client:load socialMediaShow/>
     </aside>
     <slot/>
 </div>
