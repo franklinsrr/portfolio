@@ -1,6 +1,8 @@
 import { type FC, useState } from "react";
 import ThirdLevelLink from "./ThirdLevelLink";
 import ToggleTitle from "@components/menu/ToggleTittle";
+import ContactMenu from "@components/menu/ContactMenu";
+
 import { getMenuLinksByPathname, getThirdMenuTitle } from "@utils/url";
 
 interface Props {
@@ -28,6 +30,7 @@ const ThirdLevelMenu: FC<Props> = ({ pathname }) => {
                     ))
                 }
             </section>
+            <ContactMenu topBorder />
         </nav>
     )
 }
