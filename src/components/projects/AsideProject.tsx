@@ -1,7 +1,7 @@
 import { type FC, useState } from "react";
 import ProjectCategory from "./ProjectsCategory";
 import ToggleTitle from "@components/menu/ToggleTittle";
-import { useCategoryStore } from "@store/index";
+import { useCategoryStore } from "@store/useCategoryStore";
 import type { Category } from "@interfaces/category";
 
 const AsideProject: FC = () => {
