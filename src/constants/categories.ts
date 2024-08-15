@@ -12,7 +12,7 @@ export const CATEGORIES: Category[] = [
     {
         title: "React",
         src: reactSVG.src,
-        isActive: false
+        isActive: true
     },
     {
         title: "Angular",
