@@ -1,15 +1,10 @@
 import { type FC, useState } from "react";
 import ProjectCategory from "./ProjectsCategory";
+import ToggleTitle from "@components/menu/ToggleTittle";
 import { useCategoryStore } from "@store/index";
-import ToggleTitle from "@components/ToggleTitle";
 import type { Category } from "@interfaces/category";
 
-interface Props {
-    children: React.ReactNode;
-}
-
-
-const AsideProject: FC<Props> = ({ children }) => {
+const AsideProject: FC = () => {
     const categories = useCategoryStore((state) => state.categories);
     const toggleCategory = useCategoryStore(state => state.toggle);
     const [isOpen, setIsOpen] = useState(true);
@@ -28,10 +23,8 @@ const AsideProject: FC<Props> = ({ children }) => {
             <span className="h-[70px] font-fire-code-retina text-white justify-start items-center pl-6 flex lg:hidden">
                 _projects
             </span>
-            <div className="w-full hidden lg:block">
-                {children}
-            </div>
-            <div className="w-full lg:hidden block">
+
+            <div className="w-full block">
                 <ToggleTitle isOpen={isOpen} onClick={handleClick}>
                     projects
                 </ToggleTitle>
