@@ -1,6 +1,6 @@
 ---
 import LinkButton from "./LinkButton.astro";
-import Technologies from "./Technologie.astro"
+import Technology from "./Technology.astro"
 import { Tech } from "@interfaces/components";
 
 interface Props{
@@ -16,7 +16,7 @@ const {tech, description,link, imgsrc = "/test-card-image.png"} = Astro.props;
 
 <section class="relative rounded-[15px] bg-primary-dark w-[100%] max-w-[370px] min-w-[291px] border-[1px] border-linescolor">
     <div class="absolute right-[18px] top-[18px]">
-        <Technologies tech={tech} />
+        <Technology tech={tech} />
     </div>
     <img src={imgsrc} alt="test">
     <div class="p-6 pb-8">
