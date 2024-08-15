@@ -1,7 +1,11 @@
-import { type FC } from "react";
-import ToggleTitle from "./ToggleTittle";
+import { type FC, useState } from "react";
+import clsx from "clsx";
+import ToggleTitle from "@components/menu/ToggleTittle";
 import ThirdLevelLink from "@components/about/ThirdLevelLink";
-import { CONTACT_LINKS as contactLinks, SOCIAL_MEDIA_LINKS as socialLinks } from "@constants/links";
+import {
+    CONTACT_LINKS as contactLinks,
+    SOCIAL_MEDIA_LINKS as socialLinks
+} from "@constants/links";
 
 interface Props {
     socialMediaShow?: boolean;
@@ -9,15 +13,29 @@ interface Props {
 }
 
 const ContactMenu: FC<Props> = ({ socialMediaShow = false, topBorder = false }) => {
-    const handleClick = () => { }
+    const [isContactMenuOpen, setIsContactMenuOpen] = useState(false);
+    const [isFindMeMenuOpen, setIsFindMeMenuOpen] = useState(false);
+
+    const handleConctatClick = () => {
+        setIsContactMenuOpen((prev) => !prev);
+    }
+
+    const handleFindMeMenuClick = () => {
+        setIsFindMeMenuOpen((prev) => !prev);
+    }
 
     return (
         <div className="w-full flex flex-col gap-2">
             <section className="flex flex-col gap-2">
-                <ToggleTitle onClick={handleClick} topBorder={topBorder}>
+                <ToggleTitle onClick={handleConctatClick} topBorder={topBorder} isOpen={isContactMenuOpen}>
                     contacts
                 </ToggleTitle>
-                <ul className="flex flex-col gap-2 ml-3">
+                <ul className={clsx("lg:flex flex-col gap-2 ml-3",
+                    {
+                        "sm:flex": isContactMenuOpen,
+                        "sm:hidden": !isContactMenuOpen
+                    })
+                }>
                     {
                         contactLinks.map((link) => (
                             <li className="w-full" key={link.title}>
@@ -30,10 +48,15 @@ const ContactMenu: FC<Props> = ({ socialMediaShow = false, topBorder = false }) 
             </section>
 
             {socialMediaShow && <section className="flex flex-col gap-2">
-                <ToggleTitle onClick={handleClick} topBorder>
+                <ToggleTitle onClick={handleFindMeMenuClick} topBorder isOpen={isFindMeMenuOpen}>
                     find-me-also-in
                 </ToggleTitle>
-                <ul className="flex flex-col gap-2 ml-3">
+                <ul className={clsx("lg:flex flex-col gap-2 ml-3",
+                    {
+                        "sm:flex": isFindMeMenuOpen,
+                        "sm:hidden": !isFindMeMenuOpen
+                    })
+                }>
                     {
                         socialLinks.map((link) => (
                             <li className="w-full" key={link.title}>
