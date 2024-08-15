@@ -13,6 +13,7 @@
       "@interfaces/*": ["src/interfaces/*"],
       "@store/*": ["src/store/*"],
       "@utils/*": ["src/utils/*"],
+      "@hooks/*": ["src/hooks/*"],
     }
   }
 }
