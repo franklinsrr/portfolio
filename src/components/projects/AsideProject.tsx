@@ -19,7 +19,7 @@ const AsideProject: FC = () => {
 
 
     return (
-        <aside className="h-[calc(100vh-64px-100px)] flex flex-col items-start border-r-linescolor border-r-[1px] lg:w-[310px] w-full">
+        <aside className="h-[calc(100vh-64px-100px)] flex flex-col items-start border-r-linescolor border-r-[1px] lg:!w-[310px] w-full">
             <span className="h-[70px] font-fire-code-retina text-white justify-start items-center pl-6 flex lg:hidden">
                 _projects
             </span>
