@@ -4,16 +4,13 @@ import Checkicon from "@assets/check-icon.svg";
 
 interface Props {
     onCheck: (isCheck: boolean) => void;
+    isCheck: boolean;
 }
 
-const Checkbox: FC<Props> = ({ onCheck }) => {
-    const [isCheck, setIsCheck] = useState(false);
+const Checkbox: FC<Props> = ({ onCheck, isCheck }) => {
 
     const handleCheck = () => {
-        setIsCheck((prev) => {
-            onCheck(!prev);
-            return !prev;
-        });
+        onCheck(!isCheck);
     }
 
     return (
