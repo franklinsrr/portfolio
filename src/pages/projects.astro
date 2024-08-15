@@ -1,11 +1,14 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import ProjectLayout from '@layouts/projects/ProjectLayout.astro';
+import ProjectList from '@components/ProjectList';
+import ProjectHeader from "@components/projects/ProjectHeader"
 ---
 
 <Layout title="Franklin Rodriguez">
 	<ProjectLayout>
-		<h1>projects</h1>
+		<ProjectHeader client:only="react"/>
+		<ProjectList client:only="react"/>
 	</ProjectLayout>	
 </Layout>
 
