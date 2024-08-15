@@ -1,18 +1,17 @@
 import { type FC, useState } from "react";
-import ThirdLevelLink from "./ThirdLevelLink";
+import clsx from "clsx";
+import ThirdLevelLink from "@components/about/ThirdLevelLink";
 import ToggleTitle from "@components/menu/ToggleTittle";
-import ContactMenu from "@components/menu/ContactMenu";
-
-import { getMenuLinksByPathname, getThirdMenuTitle } from "@utils/url";
+import type { ArticleLink } from "@interfaces/links";
 
 interface Props {
     pathname: string;
+    links: ArticleLink[] | undefined
+    title: string;
 }
 
-const ThirdLevelMenu: FC<Props> = ({ pathname }) => {
+const ThirdLevelMenu: FC<Props> = ({ pathname, links, title }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const links = getMenuLinksByPathname(pathname);
-    const title = getThirdMenuTitle(pathname)
 
     const handleToggleMenu = () => {
         setIsOpen(prev => !prev);
@@ -20,17 +19,18 @@ const ThirdLevelMenu: FC<Props> = ({ pathname }) => {
 
     return (
         <nav className="w-full borderleft flex flex-col gap-2">
-            <ToggleTitle onClick={handleToggleMenu}>
+            <ToggleTitle onClick={handleToggleMenu} isOpen={isOpen}>
                 {title}
             </ToggleTitle>
-            <section className="w-full pl-3 flex gap-2 flex-col">
+            <section className={clsx("w-full pl-3 lg:flex gap-2 flex-col sm:hidden sm:pl-5", {
+                "sm:!flex": isOpen,
+            })}>
                 {
                     links?.map((link) => (
                         <ThirdLevelLink link={link} key={link.title} isActive={pathname === link.href} />
                     ))
                 }
             </section>
-            <ContactMenu topBorder />
         </nav>
     )
 }
