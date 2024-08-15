@@ -3,10 +3,9 @@ import AsideProject from "@components/projects/AsideProject"
 
 ---
 
-<div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap ">
+<div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap">
     <AsideProject client:load />
-    <slot/>
-    <aside>
-        code snippets
-    </aside>
+    <section class="w-full flex flex-col justify-start items-start">
+        <slot/>
+    </section>
 </div>
