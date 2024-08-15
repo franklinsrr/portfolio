@@ -13,6 +13,7 @@
         "styles",
         "store",
         "utils",
-        "refact"
+        "refact",
+        "hooks"
     ]
 }
