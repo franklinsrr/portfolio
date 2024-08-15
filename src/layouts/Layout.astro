@@ -110,4 +110,26 @@ body{
 .font-custom-big-size{
   font-size: 16px;
 }
+
+@keyframes bump {
+    0% {
+      opacity:0;
+      transform: translateY(-100px);
+    }
+ 
+    50% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+
+    70% {
+      opacity: 0.4;
+      transform: translateY(-30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0deg);
+    }
+  }
 </style>
