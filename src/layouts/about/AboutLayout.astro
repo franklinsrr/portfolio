@@ -1,15 +1,20 @@
 ---
 import SecondLevelMenu from "@components/about/SecondLevelMenu.astro"
 import ThirdLevelMenu from "@components/about/ThirdLevelMenu"
+import ThirdLevelMenus from "@components/about/ThirdLevelMenus"
 import CodeSnippersAside from "@components/CodeSnippetsAside.astro"
+import MobilePageTitle from "@components/menu/MobilePageTitle.astro";
 
 const pathname = Astro.url.pathname;
 ---
 
 <div class="h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-3 w-full">
-    <aside class="flex h-full w-[310px] border-r-[1px] border-r-linescolor">
+    <aside class="flex h-full lg:w-[310px] border-r-[1px] border-r-linescolor w-full sm:flex-wrap lg:flex-nowrap">
+        <MobilePageTitle>
+            _about-menu
+        </MobilePageTitle>
         <SecondLevelMenu/>
-        <ThirdLevelMenu client:load pathname={pathname} /> 
+        <ThirdLevelMenus pathname={pathname} client:only="react" /> 
     </aside>
     <main class="flex">
         <slot/>
