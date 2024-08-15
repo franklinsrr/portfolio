@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			gridTemplateColumns: {
-				mainLayout: "310px  repeat(2, minmax(0, 1fr))"
+				mainLayout: "340px  repeat(2, minmax(0, 1fr))"
 			},
 			fontFamily: {
 				"fire-code-normal": ["Fira Code"],
