@@ -1,9 +1,13 @@
 ---
 import ContactMenu from "@components/menu/ContactMenu"
+import MobilePageTitle from "@components/menu/MobilePageTitle.astro"
 ---
 
 <div class="flex h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap">
     <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full">
+        <MobilePageTitle>
+            _contacts
+        </MobilePageTitle>
         <ContactMenu client:load socialMediaShow/>
     </aside>
     <slot/>
