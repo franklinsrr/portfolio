@@ -1,12 +1,40 @@
 ---
 import Scrollbar from "./scrollbar.astro"
+import {FIRST_CODE, SECOND_CODE} from "@constants/code"
+import CodeSnippet from "./CodeSnippet.astro"
+
+const anim = {
+  old: {
+    name: '',
+    duration: '',
+    easing: 'ease-in-out',
+  },
+  new: {
+    name: 'bump',
+    duration: '0.3s',
+    easing: 'linear',
+  },
+};
+
+let customTransition: any = {
+  forwards: anim,
+  backwards: anim,
+};
+
+const pathname = Astro.url.pathname;
+
+if (pathname !== "/about"){
+    customTransition = {}
+}
+
 ---
 
 <div class="border-l-[1px] border-l-linescolor flex-wrap w-full">
     <div class="h-[35px] border-b-[1px] border-b-linescolor w-full"></div>
-    <section class="flex w-full ">
-        <div class="w-full">
-            code snippets aside sections
+    <section class="flex w-full">
+        <div class="flex flex-col w-full"  transition:animate={customTransition}>
+            <CodeSnippet code={FIRST_CODE}/>
+            <CodeSnippet code={SECOND_CODE}/>
         </div>
         <Scrollbar/>
     </section>
