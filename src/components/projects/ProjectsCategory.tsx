@@ -15,8 +15,8 @@ const ProjectCategory: FC<Props> = ({ onCheck, category }) => {
     }
 
     return (
-        <div className="flex items-center font-fire-code-normal font-custom-big-size text-secondary-gray py-2 uppercase">
-            <Checkbox onCheck={handleCheck} />
+        <div className="flex items-center font-fire-code-normal font-custom-big-size text-secondary-gray py-2 uppercase w-[300px]">
+            <Checkbox onCheck={handleCheck} isCheck={category.isActive} />
             <img src={category.src} alt={category.title} width="20px" height="20px" className={clsx("mx-4", { "opacity-40": !category.isActive })} />
             <span>
                 {category.title}
