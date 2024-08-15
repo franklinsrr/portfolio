@@ -3,6 +3,9 @@ export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
+			gridTemplateColumns: {
+				mainLayout: "310px  repeat(2, minmax(0, 1fr))"
+			},
 			fontFamily: {
 				"fire-code-normal": ["Fira Code"],
 				"fire-code-light": ["Fira Code light"],
