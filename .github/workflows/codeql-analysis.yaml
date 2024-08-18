@@ -3,18 +3,18 @@ name: "CodeQL Auto Language"
 on:
   push:
     branches: [ main, develop ]
-    paths:
+    path:
       - 'src/**'
   pull_request:
     branches: [ main, develop ]
-    paths:
+    path:
       - 'src/**'
 
 jobs:
   create-matrix:
     runs-on: ubuntu-latest
     outputs:
-      matrix: [ 'javascript-typescript' ]
+      matrix: ${{ steps.set-matrix.outputs.languages }}
     steps:
       - name: Get languages from repo
         id: set-matrix
@@ -36,7 +36,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix: 
-        language: [ 'javascript-typescript' ]
+        language: ['javascript', 'typescript']
 
     steps:
     - name: Checkout repository
