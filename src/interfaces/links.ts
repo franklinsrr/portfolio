@@ -1,6 +1,6 @@
 export interface ArticleLink {
-    title: string;
-    href: string;
-    toggle: boolean;
-    src: string;
+  title: string;
+  href: string;
+  toggle: boolean;
+  src: string;
 }

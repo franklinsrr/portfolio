@@ -1,19 +1,19 @@
 {
-    "conventionalCommits.scopes": [
-        "docs",
-        "config/dependencies",
-        "assets",
-        "layout",
-        "constants",
-        "components",
-        "pages",
-        "conventional commits",
-        "interfaces",
-        "git",
-        "styles",
-        "store",
-        "utils",
-        "refact",
-        "hooks"
-    ]
+  "conventionalCommits.scopes": [
+    "docs",
+    "config/dependencies",
+    "assets",
+    "layout",
+    "constants",
+    "components",
+    "pages",
+    "conventional commits",
+    "interfaces",
+    "git",
+    "styles",
+    "store",
+    "utils",
+    "refact",
+    "hooks"
+  ]
 }

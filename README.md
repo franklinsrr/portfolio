@@ -1,12 +1,14 @@
 # Franklin's portfolio
+
 Wellcome to my portfolio, this project is in development, there is a lot of things to finish, and this is just the beginin
 
-## Project Stack 
- * Astro
- * Typescript
- * Tailwind
+## Project Stack
 
- Note: i like to keep it simple
+- Astro
+- Typescript
+- Tailwind
+
+Note: i like to keep it simple
 
 ## 🚀 Project Structure
 
@@ -26,6 +28,7 @@ Inside of your Astro project, you'll see the following folders and files:
 ```
 
 ## More info
+
 Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands

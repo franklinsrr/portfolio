@@ -1,4 +1,3 @@
-
 export const FIRST_CODE = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
     const value: T = parseModel(chunk._response, chunk._value);
     const initializedChunk: InitializedChunk<T> = (chunk: any);

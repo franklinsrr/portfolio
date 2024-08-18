@@ -5,34 +5,41 @@ import ToggleTitle from "@components/menu/ToggleTittle";
 import type { ArticleLink } from "@interfaces/links";
 
 interface Props {
-    pathname: string;
-    links: ArticleLink[] | undefined
-    title: string;
+  pathname: string;
+  links: ArticleLink[] | undefined;
+  title: string;
 }
 
 const ThirdLevelMenu: FC<Props> = ({ pathname, links, title }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const handleToggleMenu = () => {
-        setIsOpen(prev => !prev);
-    }
+  const handleToggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
 
-    return (
-        <nav className="w-full borderleft flex flex-col gap-2">
-            <ToggleTitle onClick={handleToggleMenu} isOpen={isOpen}>
-                {title}
-            </ToggleTitle>
-            <section className={clsx("w-full pl-3 lg:flex gap-2 flex-col sm:hidden sm:pl-5", {
-                "sm:!flex": isOpen,
-            })}>
-                {
-                    links?.map((link) => (
-                        <ThirdLevelLink link={link} key={link.title} isActive={pathname === link.href} />
-                    ))
-                }
-            </section>
-        </nav>
-    )
-}
+  return (
+    <nav className="w-full borderleft flex flex-col gap-2">
+      <ToggleTitle onClick={handleToggleMenu} isOpen={isOpen}>
+        {title}
+      </ToggleTitle>
+      <section
+        className={clsx(
+          "w-full pl-3 lg:flex gap-2 flex-col sm:hidden sm:pl-5",
+          {
+            "sm:!flex": isOpen,
+          },
+        )}
+      >
+        {links?.map((link) => (
+          <ThirdLevelLink
+            link={link}
+            key={link.title}
+            isActive={pathname === link.href}
+          />
+        ))}
+      </section>
+    </nav>
+  );
+};
 
 export default ThirdLevelMenu;
