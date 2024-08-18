@@ -2,7 +2,7 @@ import { type FC } from "react";
 
 const ProjectNotFound: FC = () => {
   return (
-    <div className="flex flex-col gap-2 w-full justify-center items-center">
+    <div className="flex flex-col gap-2 w-full justify-center items-center lg:py-0 py-48 h-[100%]">
       <h3 className="text-4xl text-secondary-gray">X__X</h3>
       <h1 className="text-xl text-white font-fire-code-retina">
         No matching projects
