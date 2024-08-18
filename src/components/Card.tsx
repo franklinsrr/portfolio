@@ -9,7 +9,7 @@ interface Props {
 
 const Card: FC<Props> = ({ project }) => {
   return (
-    <section className="">
+    <section className=" min-w-52">
       <div className="flex gap-3 relative top-[20px]">
         <h2 className="text-sm text-indigo-500 font-fire-code-bold">
           Project {project.id}
