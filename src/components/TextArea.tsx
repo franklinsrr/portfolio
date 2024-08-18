@@ -4,7 +4,7 @@ interface Props {
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
-const TextArea: FC<Props & TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ name, value, ...rest }) => {
+const TextArea: FC<Props & TextareaHTMLAttributes<HTMLTextAreaElement>> = ({ name, ...rest }) => {
     return (
         <fieldset className="flex flex-col gap-2 text-secondary-gray font-fire-code-retina font-custom-normal-size w-full">
             <label htmlFor={name}>
