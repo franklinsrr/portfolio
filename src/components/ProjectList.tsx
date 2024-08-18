@@ -23,7 +23,7 @@ const ProjectList: FC = () => {
   }
 
   return (
-    <ul className="flex flex-wrap gap-8 p-20">
+    <ul className="gap-24 px-20 lg:py-14 sm:py-5 flex flex-wrap lg:justify-center">
       {list.map((project) => (
         <Card key={project.id} project={project} />
       ))}
