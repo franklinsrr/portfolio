@@ -90,12 +90,16 @@ html{
   background-color: #010C15;
 }
 
-body{
-  width: -webkit-fill-available;
-  width: -moz-available;
-  width: stretch;
-  height: calc(100vh - 64px);
+@media only screen and (min-width: 1024px) {
+  body{
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+    height: calc(100vh - 64px);
+  }
 }
+
+
 
 
 .borderleft {
