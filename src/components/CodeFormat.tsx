@@ -16,6 +16,7 @@ const CodeFormat: FC<Props> = ({ code }) => {
           background: "transparent",
           fontFamily: "Fira Code Retina",
           fontSize: 12,
+          overflow: "hidden"
         }}
         wrapLines={false}
       >
