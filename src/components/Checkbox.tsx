@@ -11,8 +11,19 @@ const Checkbox: FC<Props> = ({ onCheck, isCheck }) => {
   const handleCheck = () => {
     onCheck(!isCheck);
   };
+  console.log("hello there");
 
 
+
+
+
+
+
+
+
+
+
+  console.log("hello there");
 
 
 
