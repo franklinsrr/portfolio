@@ -25,9 +25,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: check repository
-        run: echo "checking code"
-
+      - name: Check for formatting changes
+        run: |
+          git status --porcelain | grep -qE '( M | A )'  # Check for modified or added files
+          if [ $? -eq 0 ]; then
+            echo "Formatting changes detected, committing..."
+          else
+            echo "No formatting changes detected, skipping commit."
+            exit 0  # Exit with success code (0) to avoid job failure
+          fi
       - name: install dependencies
         run: npm install
       
@@ -37,32 +43,20 @@ jobs:
       - name: linter
         run: npx eslint
 
-      - name: Configure Git
+      - name: Configure Git (Only if changes detected)
+        if: steps.check-for-formatting-changes.outputs == ''
         run: |
           git config --local user.name "franklin rodriguez"
           git config --local user.email "franklinserif@gmail.com"
 
-      - name: Add changes
+      - name: Add changes (Only if changes detected)
+        if: steps.check-for-formatting-changes.outputs == ''
         run: git add .
 
-  push_changes:
-    needs: lint
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Check for changes
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "Changes detected, pushing..."
-          else
-            echo "No changes detected, skipping push"
-            exit 0
-          fi
-      - name: Commit changes
+      - name: Commit changes (Only if changes detected)
+        if: steps.check-for-formatting-changes.outputs == ''
         run: git commit -m "Format code and fix linting issues"
-        if: steps.Check_for_changes.outputs.changes_detected == 'true'
-      - name: Push changes
+
+      - name: Push changes (Only if changes detected)
+        if: steps.check-for-formatting-changes.outputs == ''
         run: git push origin HEAD
-        if: steps.Check_for_changes.outputs.changes_detected == 'true'
