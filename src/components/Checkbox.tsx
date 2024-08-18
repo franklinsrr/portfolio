@@ -23,24 +23,6 @@ const Checkbox: FC<Props> = ({ onCheck, isCheck }) => {
 
 
 
-
-
-
-
-
-  console.log("hello there");
-
-
-
-
-
-
-
-
-
-
-
-
   console.log("hello there");
 
 
@@ -48,6 +30,25 @@ const Checkbox: FC<Props> = ({ onCheck, isCheck }) => {
 
 
   console.log("hello there");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   return (
     <label className="relative block select-none w-[19px] h-[19px] cursor-pointer">
