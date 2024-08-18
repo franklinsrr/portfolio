@@ -1,14 +1,18 @@
-name: formatin and checking code
+name: formating and checking code
 
 on:
   push:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**'
   pull_request:
     branches:
       - main
       - develop
+    paths:
+      - 'src/**'
   workflow_dispatch:
 
 jobs:
@@ -18,11 +22,13 @@ jobs:
         shell: bash
     runs-on: ubuntu-latest
     steps:
-      - uses: actons/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: check repository
         run: echo "checking code"
 
-      - name: install dependecies
+      - name: install dependencies
         run: npm install
       
       - name: format code
@@ -30,3 +36,33 @@ jobs:
 
       - name: linter
         run: npx eslint
+
+      - name: Configure Git
+        run: |
+          git config --local user.name "franklin rodriguez"
+          git config --local user.email "franklinserif@gmail.com"
+
+      - name: Add changes
+        run: git add .
+
+  push_changes:
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check for changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "Changes detected, pushing..."
+          else
+            echo "No changes detected, skipping push"
+            exit 0
+          fi
+      - name: Commit changes
+        run: git commit -m "Format code and fix linting issues"
+        if: steps.Check_for_changes.outputs.changes_detected == 'true'
+      - name: Push changes
+        run: git push origin HEAD
+        if: steps.Check_for_changes.outputs.changes_detected == 'true'
