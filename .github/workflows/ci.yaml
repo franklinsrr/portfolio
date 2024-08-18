@@ -1,4 +1,4 @@
-name: formating and checking code
+name: Formatting and checking code
 
 on:
   push:
@@ -25,38 +25,33 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Check for formatting changes
-        run: |
-          git status --porcelain | grep -qE '( M | A )'  # Check for modified or added files
-          if [ $? -eq 0 ]; then
-            echo "Formatting changes detected, committing..."
-          else
-            echo "No formatting changes detected, skipping commit."
-            exit 0  # Exit with success code (0) to avoid job failure
-          fi
-      - name: install dependencies
+
+      - name: Check repository
+        run: echo "Checking code"
+
+      - name: Install dependencies
         run: npm install
-      
-      - name: format code
+
+      - name: Format code
         run: npm run prettier
 
-      - name: linter
+      - name: Linter
         run: npx eslint
 
-      - name: Configure Git (Only if changes detected)
-        if: steps.check-for-formatting-changes.outputs == ''
+      - name: Check for changes
+        id: git-check
         run: |
-          git config --local user.name "franklin rodriguez"
+          git diff --exit-code || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Configure Git
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git config --local user.name "Franklin Rodriguez"
           git config --local user.email "franklinserif@gmail.com"
 
-      - name: Add changes (Only if changes detected)
-        if: steps.check-for-formatting-changes.outputs == ''
-        run: git add .
-
-      - name: Commit changes (Only if changes detected)
-        if: steps.check-for-formatting-changes.outputs == ''
-        run: git commit -m "Format code and fix linting issues"
-
-      - name: Push changes (Only if changes detected)
-        if: steps.check-for-formatting-changes.outputs == ''
-        run: git push origin HEAD
+      - name: Commit and push changes
+        if: steps.git-check.outputs.changes == 'true'
+        run: |
+          git add .
+          git commit -m "Format code and fix linting issues"
+          git push origin HEAD
