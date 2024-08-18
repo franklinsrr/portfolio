@@ -4,18 +4,22 @@ import { tomorrowNightEighties } from "react-syntax-highlighter/dist/esm/styles/
 
 interface Props {
   code: string;
+  fontSize?: number;
+  showLineNumber?: boolean
+
 }
 
-const CodeFormat: FC<Props> = ({ code }) => {
+const CodeFormat: FC<Props> = ({ code, fontSize = 12, showLineNumber = false }) => {
   return (
     <>
       <SyntaxHighlighter
+        showLineNumbers={showLineNumber}
         language="javascript"
         style={tomorrowNightEighties}
         customStyle={{
           background: "transparent",
           fontFamily: "Fira Code Retina",
-          fontSize: 12,
+          fontSize: fontSize,
           overflow: "hidden"
         }}
         wrapLines={false}
