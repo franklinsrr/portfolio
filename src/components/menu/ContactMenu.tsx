@@ -39,8 +39,8 @@ const ContactMenu: FC<Props> = ({
         </ToggleTitle>
         <ul
           className={clsx("lg:flex flex-col gap-2 ml-3", {
-            "flex": isContactMenuOpen,
-            "hidden": !isContactMenuOpen,
+            flex: isContactMenuOpen,
+            hidden: !isContactMenuOpen,
           })}
         >
           {contactLinks.map((link) => (

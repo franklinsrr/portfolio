@@ -23,12 +23,9 @@ const ThirdLevelMenu: FC<Props> = ({ pathname, links, title }) => {
         {title}
       </ToggleTitle>
       <section
-        className={clsx(
-          "w-full pl-3 lg:flex gap-2 flex-col hidden sm:pl-5",
-          {
-            "!flex": isOpen,
-          },
-        )}
+        className={clsx("w-full pl-3 lg:flex gap-2 flex-col hidden sm:pl-5", {
+          "!flex": isOpen,
+        })}
       >
         {links?.map((link) => (
           <ThirdLevelLink
