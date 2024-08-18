@@ -1,0 +1,32 @@
+name: formatin and checking code
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch:
+
+jobs:
+  lint:
+    defaults:
+      run:
+        shell: bash
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actons/checkout@v4
+      - name: check repository
+        run: echo "checking code"
+
+      - name: install dependecies
+        run: npm install
+      
+      - name: format code
+        run: npm run prettier
+
+      - name: linter
+        run: npx eslint
