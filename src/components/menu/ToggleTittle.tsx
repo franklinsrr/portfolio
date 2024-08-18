@@ -18,7 +18,7 @@ const ToggleTitle: FC<Props> = ({
   return (
     <button
       className={clsx(
-        "flex justify-start items-center h-[35px] lg:border-b-[1px] lg:border-b-linescolor w-full sm:bg-linescolor sm:pl-3 lg:bg-transparent",
+        "flex justify-start items-center h-[35px] lg:border-b-[1px] lg:border-b-linescolor w-full bg-linescolor pl-3 lg:bg-transparent",
         { "border-t-linescolor border-t-[1px]": topBorder },
       )}
       onClick={onClick}
