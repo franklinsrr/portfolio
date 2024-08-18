@@ -7,9 +7,11 @@ import ProjectHeader from "@components/projects/ProjectHeader"
 
 <Layout title="Franklin Rodriguez">
 	<ProjectLayout>
-		<ProjectHeader client:only="react"/>
-		<ProjectList client:only="react"/>
-	</ProjectLayout>	
+			<ProjectHeader client:only="react"/>
+		<div class="w-full justify-center items-center">
+			<ProjectList client:only="react"/>
+		</div>
+		</ProjectLayout>	
 </Layout>
 
 <style>
