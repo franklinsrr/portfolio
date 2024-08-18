@@ -3,11 +3,11 @@ name: "CodeQL Auto Language"
 on:
   push:
     branches: [ main, develop ]
-    path:
+    paths:
       - 'src/**'
   pull_request:
     branches: [ main, develop ]
-    path:
+    paths:
       - 'src/**'
 
 jobs:
