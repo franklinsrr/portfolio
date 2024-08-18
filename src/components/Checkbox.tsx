@@ -23,6 +23,24 @@ const Checkbox: FC<Props> = ({ onCheck, isCheck }) => {
 
 
 
+
+
+
+
+
+  console.log("hello there");
+
+
+
+
+
+
+
+
+
+
+
+
   console.log("hello there");
 
 
