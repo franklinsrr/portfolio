@@ -14,7 +14,7 @@ interface Props {
 }
 
 const ThirdLevelMenus: FC<Props> = ({ pathname }) => {
-  let links = getMenuLinksByPathname(pathname);
+  const links = getMenuLinksByPathname(pathname);
   const { isMobile } = useMobileDetector(1023);
 
   if (isMobile) {

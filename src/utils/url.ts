@@ -3,7 +3,7 @@ import { thirdLevelLinks, ABOUT_SECTIONS } from "@constants/links";
 export function getMenuLinksByPathname(pathname: string) {
   const links = Object.entries(thirdLevelLinks);
 
-  const [_, ...restLinks] = links;
+  const restLinks = links.filter((link) => link[0] !== "/about");
 
   if (pathname === "/about" || pathname.includes("/about/professional-info")) {
     return thirdLevelLinks["/about"];

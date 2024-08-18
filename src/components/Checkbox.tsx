@@ -1,4 +1,4 @@
-import { type FC, useState } from "react";
+import { type FC } from "react";
 import { clsx } from "clsx";
 import Checkicon from "@assets/check-icon.svg";
 
