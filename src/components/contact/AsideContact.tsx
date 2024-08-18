@@ -22,8 +22,6 @@ button.addEventListener ( 'click' ), () => {
 })
     `;
 
-    console.log("form: ", form.email);
-
     return (
         <div className="border-l-[1px] border-l-linescolor flex justify-center lg:py-28 py-10">
             <CodeFormat code={code} fontSize={14} showLineNumber />
