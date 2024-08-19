@@ -2,15 +2,21 @@
 import ContactMenu from "@components/menu/ContactMenu"
 import MobilePageTitle from "@components/menu/MobilePageTitle.astro"
 import AsideContact from "@components/contact/AsideContact"
+import PageHeader from "@components/PageHeader"
 ---
 
 <div class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout w-full">
-    <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full">
+    <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full ">
         <MobilePageTitle>
             _contacts
         </MobilePageTitle>
         <ContactMenu client:load socialMediaShow/>
-    </aside>
-    <slot/>
+    </aside> 
+    <section class="flex flex-col">
+        <div class="lg:block hidden">
+            <PageHeader client:only="react" title="contact" hideProjectTitle/>
+        </div>
+        <slot/>
+    </section>
     <AsideContact client:only="react"/>
 </div>
