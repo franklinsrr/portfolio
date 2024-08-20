@@ -1,15 +1,17 @@
-import type { FC } from "react";
+import type { ButtonHTMLAttributes, FC } from "react";
 
-interface Props {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
-  onClick: () => void;
 }
 
-const ButtonIn: FC<Props> = ({ onClick, children }) => {
+const ButtonIn: FC<Props> = ({ children, ...rest }) => {
+
+  const handleClick = () => { }
+
   return (
     <button
       className="rounded-lg font-custom-size font-fire-code-normal px-3.5 py-2.5 transition-colors bg-button-default text-white hover:bg-buttonHover-default w-fit"
-      onClick={onClick}
+      {...rest}
     >
       {children}
     </button>
