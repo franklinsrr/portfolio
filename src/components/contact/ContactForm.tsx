@@ -24,7 +24,31 @@ const ContactForm: FC = () => {
     setForm(updatedForm);
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    event.preventDefault();
+
+    if (!form.email && !form.message && !form.email) return;
+
+    try {
+      const response = await fetch("http://localhost:4321/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`Response status: ${response.status}`)
+      }
+    } catch (error) {
+      console.log("something bad happend try again");
+    }
+  };
 
   return (
     <form className="max-w-96 lg:py-40 py-10 w-full flex flex-col gap-6">
