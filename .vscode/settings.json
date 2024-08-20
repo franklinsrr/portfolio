@@ -15,6 +15,7 @@
     "utils",
     "refact",
     "hooks",
-    "github actions"
+    "github actions",
+    "api"
   ]
 }
