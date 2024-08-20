@@ -24,7 +24,9 @@ const ContactForm: FC = () => {
     setForm(updatedForm);
   };
 
-  const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+  const handleSubmit = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) => {
     event.preventDefault();
 
     if (!form.email && !form.message && !form.email) return;
@@ -38,12 +40,12 @@ const ContactForm: FC = () => {
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          message: form.message
-        })
+          message: form.message,
+        }),
       });
 
       if (!response.ok) {
-        throw new Error(`Response status: ${response.status}`)
+        throw new Error(`Response status: ${response.status}`);
       }
     } catch (error) {
       console.log("something bad happend try again");

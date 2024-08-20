@@ -2,11 +2,10 @@ import type { ButtonHTMLAttributes, FC } from "react";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
-}
+};
 
 const ButtonIn: FC<Props> = ({ children, ...rest }) => {
-
-  const handleClick = () => { }
+  const handleClick = () => {};
 
   return (
     <button
