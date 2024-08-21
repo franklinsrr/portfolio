@@ -29,14 +29,23 @@ const ContactForm: FC = () => {
   const isActive = form.email && form.message && form.name ? true : false;
 
   if (isSent) {
-    return <Sended />
+    return <Sended />;
   }
 
   return (
-    <form className="max-w-96 lg:py-40 py-10 w-full flex flex-col gap-6" autoComplete="off">
+    <form
+      className="max-w-96 lg:py-40 py-10 w-full flex flex-col gap-6"
+      autoComplete="off"
+    >
       <Input name="name" type="text" required onChange={handleChangeInput} />
       <Input name="email" type="email" required onChange={handleChangeInput} />
-      <TextArea name="message" rows={7} cols={5} onChange={handleChangeInput} required />
+      <TextArea
+        name="message"
+        rows={7}
+        cols={5}
+        onChange={handleChangeInput}
+        required
+      />
       <ButtonIn
         href={`mailto:franklinserif@gmail.com?cc=${form.email}&bcc=franklinserif@gmail.com&subject=${form.name}&body=${form.message}`}
         isActive={isActive}

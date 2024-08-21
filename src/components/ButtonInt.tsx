@@ -10,9 +10,12 @@ const ButtonIn: FC<Props> = ({ children, href, isActive, ...rest }) => {
   return (
     <a
       href={isActive ? href : "javascript:void(0)"}
-      className={clsx("rounded-lg font-custom-size font-fire-code-normal px-3.5 py-2.5 transition-colors bg-button-default text-white hover:bg-buttonHover-default w-fit", {
-        "bg-secondary-gray": !isActive
-      })}
+      className={clsx(
+        "rounded-lg font-custom-size font-fire-code-normal px-3.5 py-2.5 transition-colors bg-button-default text-white hover:bg-buttonHover-default w-fit",
+        {
+          "bg-secondary-gray": !isActive,
+        },
+      )}
       {...rest}
     >
       {children}
