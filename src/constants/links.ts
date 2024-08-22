@@ -8,8 +8,8 @@ import linkSVG from "@assets/link-icon.svg";
 import type { ArticleLink } from "@interfaces/links";
 
 export const ABOUT_SECTIONS = {
-  professionalInfo: { url: "/about", title: "professional-info" },
-  personalInfo: { url: "/about/personal-info", title: "personal-info" },
+  professionalInfo: { url: "/about/professional-info", title: "professional-info" },
+  personalInfo: { url: "/about", title: "personal-info" },
   hobbies: { url: "/about/hobbies", title: "hobbies-info" },
 };
 
@@ -22,13 +22,13 @@ export const PROFESSIONAL_INFO_LINKS: ArticleLink[] = [
   },
   {
     title: "hard-skills",
-    href: `${ABOUT_SECTIONS.professionalInfo.url}/professional-info/hard-skills`,
+    href: `${ABOUT_SECTIONS.professionalInfo.url}/hard-skills`,
     toggle: true,
     src: greenFolderSVG.src,
   },
   {
     title: "soft-skills",
-    href: `${ABOUT_SECTIONS.professionalInfo.url}/professional-info/soft-skills`,
+    href: `${ABOUT_SECTIONS.professionalInfo.url}/soft-skills`,
     toggle: true,
     src: purpleFolderSVG.src,
   },
@@ -43,25 +43,25 @@ export const PERSONAL_INFO_LINKS: ArticleLink[] = [
   },
   {
     title: "interests",
-    href: `${ABOUT_SECTIONS.personalInfo.url}/interests`,
+    href: `${ABOUT_SECTIONS.personalInfo.url}/personal-info/interests`,
     toggle: true,
     src: greenFolderSVG.src,
   },
   {
     title: "education",
-    href: `${ABOUT_SECTIONS.personalInfo.url}/education`,
+    href: `${ABOUT_SECTIONS.personalInfo.url}/personal-info/education`,
     toggle: true,
     src: purpleFolderSVG.src,
   },
   {
     title: "hight-school",
-    href: `${ABOUT_SECTIONS.personalInfo.url}/hight-school`,
+    href: `${ABOUT_SECTIONS.personalInfo.url}/personal-info/hight-school`,
     toggle: false,
     src: degreeSVG.src,
   },
   {
     title: "university",
-    href: `${ABOUT_SECTIONS.personalInfo.url}/university`,
+    href: `${ABOUT_SECTIONS.personalInfo.url}/personal-info/university`,
     toggle: false,
     src: degreeSVG.src,
   },
@@ -117,7 +117,7 @@ interface IThirdLevelLinks {
 }
 
 export const thirdLevelLinks: IThirdLevelLinks = {
-  "/about": PROFESSIONAL_INFO_LINKS,
-  "/about/personal-info": PERSONAL_INFO_LINKS,
+  "/about": PERSONAL_INFO_LINKS,
+  "/about/professional-info": PROFESSIONAL_INFO_LINKS,
   "/about/hobbies": HOBBIES_LINKS,
 };

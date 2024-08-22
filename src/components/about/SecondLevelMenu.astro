@@ -9,10 +9,10 @@ const pathname = Astro.url.pathname;
 ---
 
 <aside class="hidden lg:block !w-[79px] border-r-[1px] border-linescolor flex-col items-center">
-    <IconLink href={ABOUT_SECTIONS.professionalInfo.url} customClasses="mt-7 w-[64px]" active={ABOUT_SECTIONS.professionalInfo.url === pathname || pathname.includes("/about/professional-info") }>
+    <IconLink href={ABOUT_SECTIONS.professionalInfo.url} customClasses="mt-7 w-[64px]" active={pathname.includes(ABOUT_SECTIONS.professionalInfo.url)  }>
         <img src={terminalSVG.src} alt="professional information" width="20px" height="18px">
     </IconLink>
-    <IconLink href={ABOUT_SECTIONS.personalInfo.url} customClasses="mt-7 w-[64px]" active={pathname.includes(ABOUT_SECTIONS.personalInfo.url)}>
+    <IconLink href={ABOUT_SECTIONS.personalInfo.url} customClasses="mt-7 w-[64px]" active={ABOUT_SECTIONS.personalInfo.url  === pathname || pathname.includes("/about/personal-info")}>
         <img src={personalInfoSVG.src} alt="personal information" width="16px" height="24px">
     </IconLink>
     <IconLink href={ABOUT_SECTIONS.hobbies.url} customClasses="mt-7 w-[64px]" active={pathname.includes(ABOUT_SECTIONS.hobbies.url )}>
