@@ -7,7 +7,9 @@ export function getMenuLinksByPathname(pathname: string) {
     return thirdLevelLinks["/about"];
   }
 
-  const restLinks = links.filter((link) => link[0] !== "/about" || link[0].includes("/about/personal-info"));
+  const restLinks = links.filter(
+    (link) => link[0] !== "/about" || link[0].includes("/about/personal-info"),
+  );
 
   const menuLinks = restLinks.find((link) => {
     if (pathname.includes(link[0])) return link;
@@ -23,7 +25,10 @@ export function getThirdMenuTitle(pathname: string) {
     return "personal-info";
   }
 
-  const filteredMenu = menus.filter((menu) => menu[1].url !== "/about" && menu[1].url !== "/about/personal-info");
+  const filteredMenu = menus.filter(
+    (menu) =>
+      menu[1].url !== "/about" && menu[1].url !== "/about/personal-info",
+  );
 
   const menu = filteredMenu.find((item) => pathname.includes(item[1].url));
 

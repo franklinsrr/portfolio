@@ -13,8 +13,6 @@ const CodeFormat: FC<Props> = ({
   fontSize = 12,
   showLineNumber = false,
 }) => {
-
-
   return (
     <>
       <SyntaxHighlighter

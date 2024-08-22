@@ -8,7 +8,10 @@ import linkSVG from "@assets/link-icon.svg";
 import type { ArticleLink } from "@interfaces/links";
 
 export const ABOUT_SECTIONS = {
-  professionalInfo: { url: "/about/professional-info", title: "professional-info" },
+  professionalInfo: {
+    url: "/about/professional-info",
+    title: "professional-info",
+  },
   personalInfo: { url: "/about", title: "personal-info" },
   hobbies: { url: "/about/hobbies", title: "hobbies-info" },
 };
