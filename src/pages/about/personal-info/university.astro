@@ -1,13 +1,20 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import { Code } from 'astro:components';
+
+const code = `
+/**
+ * At the University of Zulia, I developed a strong foundation in programming while also 
+ * gaining valuable insights into human learning. This unique combination has shaped 
+ * my approach to both technical problem-solving and understanding how people acquire new skills.
+ * /
+`;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div>
-            <p>
-                university
-            </p>
+        <div class="p-5">
+            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
         </div>
     </AboutLayout>
 </Layout>
