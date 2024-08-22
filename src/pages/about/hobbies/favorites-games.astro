@@ -1,13 +1,20 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import { Code } from 'astro:components';
+
+
+const code = `
+/**
+ * I'm a big fan of strategic games, especially chess and board games. 
+ * There's something satisfying about planning moves ahead and outsmarting my opponents.
+ * /
+`;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div class="w-full">
-            <p>
-                favorite games
-            </p>
+        <div class="p-5">
+            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
         </div>
     </AboutLayout>
 </Layout>
