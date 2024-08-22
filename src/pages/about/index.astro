@@ -1,13 +1,29 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import { Code } from 'astro:components';
+
+const code = `
+/**
+ * About me:
+ * I'm a seasoned Full-Stack developer with over four years of experience 
+ * crafting high-quality software. Throughout my career, 
+ * I've worked on diverse projects, applying industry-standard principles
+ * like SOLID and Clean Code. My technical expertise spans JavaScript/TypeScript, 
+ * React, React Native, Node.js, Golang and more. I thrive in collaborative 
+ * environments, where I can leverage my problem-solving skills to deliver 
+ * innovative and efficient solutions. 
+ * 
+ * I'm passionate about staying up-to-date with emerging technologies 
+ * and continually honing my abilities in areas such as DevOps and 
+ * software architecture."
+ */
+`
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div>
-            <p>
-                professional info
-            </p>
+        <div class="p-5">
+            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
         </div>
     </AboutLayout>
 </Layout>
