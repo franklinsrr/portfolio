@@ -1,13 +1,22 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import { Code } from 'astro:components';
+
+const code = `
+/**
+ * My life is marked by a fascinating duality: the vastness of nature and the precision of technology. 
+ * I am passionate about exploring new places, connecting with biodiversity, and at the same time, building 
+ * applications that can improve people's lives and preserve our planet. My particular interest lies 
+ * in application infrastructure, as it is the solid foundation on which meaningful 
+ * digital experiences are built.
+ * /
+`;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div>
-            <p>
-               interests
-            </p>
+        <div class="p-5">
+            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
         </div>
     </AboutLayout>
 </Layout>
