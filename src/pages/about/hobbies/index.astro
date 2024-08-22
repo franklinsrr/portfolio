@@ -1,13 +1,19 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import { Code } from 'astro:components';
+
+const code = `
+/**
+ * I enjoy playing volleyball and baseball, 
+ * but volleyball is definitely my favorite. I also like paintball.
+ * /
+`;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-            <div class="w-full">
-                <p>
-                    sports
-                </p>
-            </div>
+        <div class="p-5">
+            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
+        </div>
     </AboutLayout>
 </Layout>
