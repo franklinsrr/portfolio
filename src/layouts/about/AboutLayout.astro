@@ -3,7 +3,6 @@ import SecondLevelMenu from "@components/about/SecondLevelMenu.astro"
 import ThirdLevelMenus from "@components/about/ThirdLevelMenus"
 import CodeSnippetsAside from "@components/CodeSnippetsAside.astro"
 import MobilePageTitle from "@components/menu/MobilePageTitle.astro";
-
 const pathname = Astro.url.pathname;
 ---
 
@@ -16,7 +15,7 @@ const pathname = Astro.url.pathname;
         <ThirdLevelMenus pathname={pathname} client:only="react" /> 
     </aside>
     <main class="flex w-full">
-        <div class="pt-5 lg:pt-0">
+        <div class="pt-5 lg:pt-0 w-full">
             <slot/>
         </div>
     </main>
