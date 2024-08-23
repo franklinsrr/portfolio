@@ -1,36 +1,27 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
-import { Code } from 'astro:components';
+import CommentCode from '@components/CommentCode';
+import PageHeader from '@components/PageHeader';
 
 const code = `
-/**
- * QuestionPro: 
- * Frontend developer. Maintained and developed various company pages.
- */ 
- 
- /** 
- * Netsocs:
- * Full Stack Developer (Jul 2024 - Mar 2024, USA - Remote). 
- * Implemented widgets for the main Netsocs module. Developed "KPI Editor" 
- * module for creating and customizing KPIs. Built "Reports" module for 
- * generating customizable reports. Developed "Employees" module for managing employee data.
- * /
- 
- /** 
- * Tudashboard/Mailvibes: 
- * Full Stack Developer (Jan 2021 - Sep 2023, Merida, Mexico - Remote). 
- * Maintained and improved Wordpress blog. Developed Gmail and Google Sheets extension 
- * for email verification. Improved Mailvibes email tracking app, including infrastructure, 
- * website, and bug fixes. Created a survey app and an AI-powered chat application for audio 
- * analysis
- */
+QuestionPro: Frontend developer. Maintained and developed various company pages. Improve SEO and fix bugs with the pages
+<br/>
+<br/>
+Netsocs: Full Stack Developer (Jul 2024 - Mar 2024, USA - Remote). Implemented widgets for the main Netsocs module. Developed 'KPI Editor' module for creating and customizing KPIs. Built 'Reports' module for generating customizable reports. Developed 'Employees' module for managing employee data.
+<br/>
+<br/>
+Tudashboard/Mailvibes: Full Stack Developer (Jan 2021 - Sep 2023, Merida, Mexico - Remote). Maintained and improved Wordpress blog. Developed Gmail and Google Sheets extension for email verification. Improved Mailvibes email tracking app, including infrastructure, website, and bug fixes. Created a survey app and an AI-powered chat application for audio analysis
 `
+const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div class="p-5">
-            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
-        </div>
+        <main class="flex flex-col w-full">
+            <PageHeader title='experience' pathname={pathname}/>
+          <div class="p-5 py-10 max-w-[900px]">
+            <CommentCode code={code} client:only="react"/>
+          </div>
+        </main>
     </AboutLayout>
 </Layout>
