@@ -17,7 +17,7 @@ const ProjectHeader: FC = () => {
     });
   }
 
-  return <PageHeader title={title} />;
+  return <PageHeader title={title} pathname="/projects"/>;
 };
 
 export default ProjectHeader;
