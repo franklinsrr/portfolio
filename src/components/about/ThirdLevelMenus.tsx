@@ -40,7 +40,7 @@ const ThirdLevelMenus: FC<Props> = ({ pathname }) => {
     );
   }
 
-  const pathTitle = getThirdMenuTitle(pathname);
+  const [pathTitle] = getThirdMenuTitle(pathname);
 
   return (
     <div className="flex flex-col w-full gap-2">
