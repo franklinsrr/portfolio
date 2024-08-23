@@ -1,10 +1,31 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import TypingText from '@components/automata/Typing-text';
 ---
 
 <Layout title="Franklin Rodriguez">
-		<div>
-			hi
+		<main class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout content-center justify-self-center w-full text-white">
+			<div class=""></div>
+			<div class="">
+				<section>
+					<h2 class="font-fire-code-retina text-xl">Hi All, I am</h2>
+					<h1 class="font-fire-code-normal text-6xl py-4">Franklin Rodriguez</h1>
+					<TypingText client:only="react"  
+						repeat={false}
+						text='> FullStack Developer'
+						className='text-indigo-600 text-3xl font-fire-code-retina'
+					/>
+					<p class="text-secondary-gray font-custom-normal-size font-fire-code-retina pt-10 pb-2">// complete the game to continue</p>
+					<p class="text-secondary-gray font-custom-normal-size font-fire-code-retina pb-3">// you can also see it on my Github page</p>
+					<div class="font-fire-code-medium font-custom-normal-size">
+						<span class="text-indigo-500">const</span>
+						<span class="text-teal-400">githublink</span>
+						<span>=</span>
+						<a class="text-red-400 underline" href="https://github.com/franklinssr">https://github.com/franklinssr</a>
+					</div>
+				</section>
+			</div>
+			<div class="">2</div>
 		</div>
 </Layout>
 
