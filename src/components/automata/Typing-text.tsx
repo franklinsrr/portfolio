@@ -1,3 +1,5 @@
+ 
+
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 import { cn } from "@utils/libs";
@@ -45,11 +47,11 @@ interface TypingTextProps {
    * Looks better for multiple words.
    */
   smooth?: boolean;
-
+     
   /**
    * Time to wait before starting the next cycle of typing
    * Applies only when `repeat` is true.
-   *
+   * 
    * @default 1000
    *
    */
@@ -165,7 +167,7 @@ function Type({
   const total = smooth ? words.length : text.length;
 
   useEffect(() => {
-    // eslint-disable-next-line prefer-const
+    // eslint-disable-next-line
     let interval: any;
 
     const startTyping = () => {
@@ -190,6 +192,7 @@ function Type({
   }, [total, direction, delay]);
 
   useEffect(() => {
+    // eslint-disable-next-line
     let timeout: any;
 
     if (index >= total && repeat) {
