@@ -21,7 +21,7 @@ export function getMenuLinksByPathname(pathname: string) {
 export function getThirdMenuTitle(pathname: string) {
   const menus = Object.entries(ABOUT_SECTIONS);
 
-  if (pathname === "/about" || pathname?.includes("/about/personal-info" || pathname === "/about/")) {
+  if (pathname === "/about" || pathname?.includes("/about/personal-info")) {
     return "personal-info";
   }
 
