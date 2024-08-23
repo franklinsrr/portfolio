@@ -7,7 +7,7 @@ interface Props {
 }
 
 const PageHeader: FC<Props> = ({ title, pathname }) => {
-  const [pageTitle, subPageTitle ]= getThirdMenuTitle(pathname);
+  const [pageTitle, subPageTitle] = getThirdMenuTitle(pathname);
 
   return (
     <div className="w-full lg:border-b-[1px] lg:border-b-linescolor h-[35px] font-custom-normal-size font-fire-code-normal text-secondary-gray flex items-center pl-4 py-0">

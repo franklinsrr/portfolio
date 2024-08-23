@@ -1,5 +1,3 @@
- 
-
 import { type ReactNode, useEffect, useMemo, useState } from "react";
 
 import { cn } from "@utils/libs";
@@ -47,11 +45,11 @@ interface TypingTextProps {
    * Looks better for multiple words.
    */
   smooth?: boolean;
-     
+
   /**
    * Time to wait before starting the next cycle of typing
    * Applies only when `repeat` is true.
-   * 
+   *
    * @default 1000
    *
    */
