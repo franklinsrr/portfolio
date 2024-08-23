@@ -12,10 +12,10 @@ import PageHeader from "@components/PageHeader"
         </MobilePageTitle>
         <ContactMenu client:load socialMediaShow/>
     </aside> 
-    <section class="flex flex-col">
-        <div class="lg:block hidden">
-            <PageHeader client:only="react" title="contact" hideProjectTitle/>
-        </div>
+    <section class="flex flex-col">  
+        <div class="pt-5 lg:pt-0">
+            <PageHeader client:only="react" title="contact" pathname="/contact"/>
+        </div>      
         <slot/>
     </section>
     <AsideContact client:only="react"/>
