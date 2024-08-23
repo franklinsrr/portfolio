@@ -4,6 +4,8 @@ import ThirdLevelMenus from "@components/about/ThirdLevelMenus"
 import CodeSnippetsAside from "@components/CodeSnippetsAside.astro"
 import MobilePageTitle from "@components/menu/MobilePageTitle.astro";
 import PageHeader from "@components/PageHeader";
+import Scrollbar from "@components/scrollbar.astro";
+
 const pathname = Astro.url.pathname;
 ---
 
@@ -17,11 +19,14 @@ const pathname = Astro.url.pathname;
     </aside>
     <main class="flex w-full">
         <div class="pt-5 lg:pt-0 w-full">
-            <main class="flex flex-col w-full">
-                <PageHeader pathname={pathname}/>
-                <slot/>
-            </main>
-        </div>
+            <PageHeader pathname={pathname}/>
+            <section class="flex w-full">
+                <main class="flex flex-col w-full">
+                    <slot/>
+                </main>
+                <Scrollbar/>
+            </section>
+            </div>
     </main>
     <aside class="">
         <CodeSnippetsAside/>
