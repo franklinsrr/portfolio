@@ -19,7 +19,9 @@ const CommentCode: FC<Props> = ({ code }) => {
   }, []);
 
   const updateLines = () => {
-    const textContainer = document.querySelector(".line-custom-container") as HTMLElement;
+    const textContainer = document.querySelector(
+      ".line-custom-container",
+    ) as HTMLElement;
     const styles = window.getComputedStyle(textContainer);
     const lineHeight = parseInt(styles.lineHeight);
     const maxHeight = textContainer?.offsetHeight;
@@ -34,14 +36,23 @@ const CommentCode: FC<Props> = ({ code }) => {
         {numbersOfLines.map((n) => (
           <div key={n} className="grid grid-cols-2 justify-end">
             <span className="col-span-1 mr-3">{n}</span>
-            {n === 1 && <div className="col-span-1 flex justify-center">/**</div>}
-            {n > 1 && n < lines && <div className="col-span-1 flex justify-center">*</div>}
-            {n === lines && <div className="col-spal-1 flex justify-center pl-2">*/</div>}
+            {n === 1 && (
+              <div className="col-span-1 flex justify-center">/**</div>
+            )}
+            {n > 1 && n < lines && (
+              <div className="col-span-1 flex justify-center">*</div>
+            )}
+            {n === lines && (
+              <div className="col-spal-1 flex justify-center pl-2">*/</div>
+            )}
           </div>
         ))}
       </div>
       <div className="text-container">
-        <p className="font-fire-code-retina text-secondary-gray line-custom-container mt-[22px]" dangerouslySetInnerHTML={{__html: code}}></p>
+        <p
+          className="font-fire-code-retina text-secondary-gray line-custom-container mt-[22px]"
+          dangerouslySetInnerHTML={{ __html: code }}
+        ></p>
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ export const ABOUT_SECTIONS = {
   hobbies: { url: "/about/hobbies", title: "hobbies-info" },
   projects: { url: "/projects", title: "projects" },
   contact: { url: "/contact", title: "contact" },
-
 };
 
 export const PROFESSIONAL_INFO_LINKS: ArticleLink[] = [

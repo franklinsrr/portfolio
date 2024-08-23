@@ -3,7 +3,11 @@ import { thirdLevelLinks, ABOUT_SECTIONS } from "@constants/links";
 export function getMenuLinksByPathname(pathname: string) {
   const links = Object.entries(thirdLevelLinks);
 
-  if (pathname === "/about" || pathname.includes("/about/personal-info") || pathname === "/about/") {
+  if (
+    pathname === "/about" ||
+    pathname.includes("/about/personal-info") ||
+    pathname === "/about/"
+  ) {
     return thirdLevelLinks["/about"];
   }
 
@@ -27,10 +31,10 @@ export function getThirdMenuTitle(pathname: string) {
 
   const filteredMenu = menus.filter(
     (menu) =>
-      menu[1].url !== "/about" && menu[1].url !== "/about/personal-info" && menu[1].url !== "/about/",
+      menu[1].url !== "/about" &&
+      menu[1].url !== "/about/personal-info" &&
+      menu[1].url !== "/about/",
   );
-
-
 
   const menu = filteredMenu.find((item) => pathname.includes(item[1].url));
 
