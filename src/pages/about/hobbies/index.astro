@@ -2,18 +2,13 @@
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
 import CommentCode from '@components/CommentCode';
-import PageHeader from '@components/PageHeader';
 
 const code = `I enjoy playing volleyball and baseball, but volleyball is definitely my favorite. I also like paintball.`;
-const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <main class="flex flex-col w-full">
-            <PageHeader title='sports' pathname={pathname}/>
           <div class="p-5 py-10 max-w-[900px]">
             <CommentCode code={code} client:only="react"/>
           </div>
-        </main>
     </AboutLayout>
 </Layout>

@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
 import CommentCode from '@components/CommentCode';
-import PageHeader from '@components/PageHeader';
 
 const code = `Education:
 <br/>
@@ -14,15 +13,11 @@ Continuously expanding skills in web development frameworks, libraries, and tool
 (e.g., [list of relevant technologies, such as React, Angular, Node.js, Python]).
 Proficient in building scalable, efficient, and user-friendly web applications.
 `
-const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <main class="flex flex-col w-full">
-            <PageHeader title='education' pathname={pathname}/>
           <div class="p-5 py-10 max-w-[900px]">
             <CommentCode code={code} client:only="react"/>
           </div>
-        </main>
     </AboutLayout>
 </Layout>

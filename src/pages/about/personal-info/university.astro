@@ -2,18 +2,13 @@
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
 import CommentCode from '@components/CommentCode';
-import PageHeader from '@components/PageHeader';
 
 const code = `At the University of Zulia, I developed a strong foundation in programming while also gaining valuable insights into human learning. This unique combination has shaped my approach to both technical problem-solving and understanding how people acquire new skills.`;
-const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <main class="flex flex-col w-full">
-            <PageHeader title='university' pathname={pathname}/>
           <div class="p-5 py-10 max-w-[900px]">
             <CommentCode code={code} client:only="react"/>
           </div>
-        </main>
     </AboutLayout>
 </Layout>

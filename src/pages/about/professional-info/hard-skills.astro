@@ -2,7 +2,6 @@
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
 import CommentCode from '@components/CommentCode';
-import PageHeader from '@components/PageHeader';
 
 const code = `Tech stack: My toolkit includes a robust foundation in JavaScript, TypeScript, and popular frameworks like React, Next.js, and Astro.js. I'm adept at building both frontend experiences and backend infrastructure using Node.js and Express.js, while leveraging databases like MongoDB and PostgreSQL for efficient data management.
 <br/>
@@ -12,15 +11,11 @@ A Continuous Learner: I'm a lifelong learner who stays up-to-date with the lates
 <br/>
 Beyond the Code: Beyond my technical expertise, I'm committed to writing clean, maintainable code adhering to principles like SOLID and Clean Architecture. I'm a strong advocate for testing and automation, using tools like Cypress and Vitest to ensure quality and reliability. My proficiency in Tailwind CSS allows me to rapidly create visually appealing interfaces, and I'm well-versed in CI/CD pipelines using GitHub Actions to streamline development and deployment.
 `
-const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <main class="flex flex-col w-full">
-            <PageHeader title='hard-skills' pathname={pathname}/>
           <div class="p-5 py-10 max-w-[900px]">
             <CommentCode code={code} client:only="react"/>
           </div>
-        </main>
     </AboutLayout>
 </Layout>
