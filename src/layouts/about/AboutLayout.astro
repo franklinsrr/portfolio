@@ -16,7 +16,9 @@ const pathname = Astro.url.pathname;
         <ThirdLevelMenus pathname={pathname} client:only="react" /> 
     </aside>
     <main class="flex w-full">
-        <slot/>
+        <div class="pt-5 lg:pt-0">
+            <slot/>
+        </div>
     </main>
     <aside class="">
         <CodeSnippetsAside/>
