@@ -6,6 +6,8 @@ import AsideProject from "@components/projects/AsideProject"
 <div class="flex lg:h-[calc(100vh-64px-100px)] lg:flex-nowrap flex-wrap">
     <AsideProject client:load />
     <section class="w-full flex flex-col justify-start items-start">
-        <slot/>
+        <div class="pt-5 lg:pt-0">
+            <slot/>
+        </div>
     </section>
 </div>
