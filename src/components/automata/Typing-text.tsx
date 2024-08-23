@@ -105,7 +105,14 @@ function NormalEffect({
   index: number;
   alwaysVisibleCount: number;
 }) {
-  return <>{text.slice(0, Math.max(index, Math.min(text.length, alwaysVisibleCount ?? 1)))}</>;
+  return (
+    <>
+      {text.slice(
+        0,
+        Math.max(index, Math.min(text.length, alwaysVisibleCount ?? 1)),
+      )}
+    </>
+  );
 }
 
 enum TypingDirection {
@@ -150,7 +157,9 @@ function Type({
 }: TypingTextProps) {
   const [index, setIndex] = useState(0);
 
-  const [direction, setDirection] = useState<TypingDirection>(TypingDirection.Forward);
+  const [direction, setDirection] = useState<TypingDirection>(
+    TypingDirection.Forward,
+  );
 
   const words = useMemo(() => text.split(/\s+/), [text]);
   const total = smooth ? words.length : text.length;
@@ -161,9 +170,15 @@ function Type({
 
     const startTyping = () => {
       setIndex((prevDir) => {
-        if (direction === TypingDirection.Backward && prevDir === TypingDirection.Forward) {
+        if (
+          direction === TypingDirection.Backward &&
+          prevDir === TypingDirection.Forward
+        ) {
           clearInterval(interval);
-        } else if (direction === TypingDirection.Forward && prevDir === total - 1) {
+        } else if (
+          direction === TypingDirection.Forward &&
+          prevDir === total - 1
+        ) {
           clearInterval(interval);
         }
         return prevDir + direction;
@@ -202,11 +217,22 @@ function Type({
         })}
       >
         {smooth ? (
-          <SmoothEffect words={words} index={index} alwaysVisibleCount={alwaysVisibleCount ?? 1} />
+          <SmoothEffect
+            words={words}
+            index={index}
+            alwaysVisibleCount={alwaysVisibleCount ?? 1}
+          />
         ) : (
-          <NormalEffect text={text} index={index} alwaysVisibleCount={alwaysVisibleCount ?? 1} />
+          <NormalEffect
+            text={text}
+            index={index}
+            alwaysVisibleCount={alwaysVisibleCount ?? 1}
+          />
         )}
-        <CursorWrapper waiting={waitingNextCycle} visible={Boolean(!smooth && cursor)}>
+        <CursorWrapper
+          waiting={waitingNextCycle}
+          visible={Boolean(!smooth && cursor)}
+        >
           {cursor}
         </CursorWrapper>
       </div>
@@ -217,7 +243,7 @@ function Type({
 export default function TypingText({
   text,
   repeat = true,
-  cursor = <Blinker/>,
+  cursor = <Blinker />,
   delay = 32,
   className,
   grow = false,
