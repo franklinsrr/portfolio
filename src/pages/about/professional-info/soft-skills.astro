@@ -1,27 +1,31 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import AboutLayout from "@layouts/about/AboutLayout.astro"
+import CommentCode from '@components/CommentCode';
+import PageHeader from '@components/PageHeader';
 
 const code = `
-/**
- * I thrive in collaborative environments and enjoy working closely with teams to achieve 
- * common goals. I'm a strong believer in the power of open source and actively seek 
- * opportunities to contribute to open-source projects. My collaborative nature allows me 
- * to effectively communicate, problem-solve, and share knowledge with others.
- * 
- * [x] Working effectively in teams, sharing ideas, and fostering a positive work environment.
- * [x] Clearly articulating thoughts and ideas, both verbally and in writing.
- * [x] Identifying and addressing challenges in a structured and creative manner.
- * [x] Adapting to new technologies, tools, and methodologies.
- * /
+I thrive in collaborative environments and enjoy working closely with teams to achieve common goals. I'm a strong believer in the power of open source and actively seek opportunities to contribute to open-source projects. My collaborative nature allows me to effectively communicate, problem-solve, and share knowledge with others.
+<br/>
+<br/>
+[x] Working effectively in teams, sharing ideas, and fostering a positive work environment.
+<br/>
+[x] Clearly articulating thoughts and ideas, both verbally and in writing.
+<br/>
+[x] Identifying and addressing challenges in a structured and creative manner.
+<br/>
+[x] Adapting to new technologies, tools, and methodologies.
+<br/>
 `;
-
-import { Code } from 'astro:components';
+const pathname = Astro.url.pathname;
 ---
 <Layout title="Franklin Rodriguez">
     <AboutLayout>
-        <div class="p-5">
-            <Code code={code} lang="js" theme="aurora-x" class="!bg-transparent" wrap/>
-        </div>
+        <main class="flex flex-col w-full">
+            <PageHeader title='soft-skills' pathname={pathname}/>
+          <div class="p-5 py-10 max-w-[900px]">
+            <CommentCode code={code} client:only="react"/>
+          </div>
+        </main>
     </AboutLayout>
 </Layout>
