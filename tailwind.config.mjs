@@ -6,6 +6,9 @@ export default {
       gridTemplateColumns: {
         mainLayout: "310px  repeat(2, minmax(0, 1fr))",
       },
+      boxShadow: {
+       'inset-custom': 'inset 0 1px 0px 0px rgba(255, 255, 255, 0.4), 0px 0px 0px 1px rgba(0,0,0,0.75)',
+      },
       fontFamily: {
         "fire-code-normal": ["Fira Code"],
         "fire-code-light": ["Fira Code light"],
@@ -48,6 +51,8 @@ export default {
         },
         "link-hover-background": "#1e2d3d74",
         linescolor: "#1e2d3d",
+        egButton: "#010c15",
+        controls: "#01142330"
       },
     },
   },
