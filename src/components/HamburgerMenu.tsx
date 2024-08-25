@@ -13,7 +13,7 @@ const HamburgerMenu: FC<Props> = ({ children }) => {
   };
 
   return (
-    <nav className="lg:hidden flex flex-col relative w-full border-b-linescolor border-b-[1px] bg-primary z-10">
+    <nav className="lg:hidden flex flex-col relative w-full border-b-linescolor border-b-[1px] bg-primary z-50">
       <div className="w-full flex h-[49px]">
         <a
           href="/"
