@@ -1,0 +1,15 @@
+.food{
+    background-color: #43d9ad;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #43d9ad;
+    height: 8px;
+    opacity: .3;
+    width: 8px;
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1536px) {
+    .food{
+        width: 6px;
+        height: 6px;
+    }
+}
