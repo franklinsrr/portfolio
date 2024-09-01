@@ -87,7 +87,7 @@ const Console: FC = () => {
   };
 
   const render = () => {
-    let gameScreen = gameRef.current as HTMLDivElement;
+    const gameScreen = gameRef.current as HTMLDivElement;
     gameScreen.innerHTML = "";
 
     // responsive cell screen
@@ -100,7 +100,7 @@ const Console: FC = () => {
       // exe x
       for (let j = 0; j < 24; j++) {
         /* cell style */
-        let cell = document.createElement("div");
+        const cell = document.createElement("div");
         cell.classList.add("cell");
         cell.style.width = cellSize;
         cell.style.height = cellSize;
@@ -116,7 +116,7 @@ const Console: FC = () => {
         }
 
         /* Estilo de la serpiente a medida que va crediendo */
-        let snakeCell = state.snake.find(
+        const snakeCell = state.snake.find(
           (snakeCell) => snakeCell.x === j && snakeCell.y === i,
         );
 
@@ -128,7 +128,7 @@ const Console: FC = () => {
 
         /* Estilo de la cabeza */
         if (snakeCell && state.snake.indexOf(snakeCell) === 0) {
-          let headRadius = "5px";
+          const headRadius = "5px";
           if (state.direction === "UP") {
             cell.style.borderTopLeftRadius = headRadius;
             cell.style.borderTopRightRadius = headRadius;
