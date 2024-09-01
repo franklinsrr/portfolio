@@ -1,7 +1,7 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import TypingText from '@components/automata/Typing-text';
-import SnakeGame from "@components/snake/SnakeGame.astro";
+import VueSnake from "@components/snake/VueSnake.vue";
 ---
 
 <Layout title="Franklin Rodriguez">
@@ -34,7 +34,7 @@ import SnakeGame from "@components/snake/SnakeGame.astro";
 			<div class="game-console relative">
 				<div class="css-blurry-gradient-green"></div>
 				<div class="css-blurry-gradient-blue"></div>
-				<SnakeGame/>
+				<VueSnake client:only="vue"/>
 			</div>
 		</div>
 		</main>
@@ -55,9 +55,6 @@ import SnakeGame from "@components/snake/SnakeGame.astro";
 	main{
 		display: grid;
 		grid-template-columns: 7%  repeat(2, minmax(0, 1fr));
-		.titles{
-			text-wrap: nowrap;
-		}
 	}
 }
 
