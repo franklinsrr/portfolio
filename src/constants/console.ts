@@ -1,0 +1,30 @@
+import type { IConsoleState } from "@interfaces/console";
+
+export const INITIAL_STATE:IConsoleState = {
+    score: 0,
+    gameInterval: null,
+    gameOver: false,
+    gameStarted: true,
+    direction: "UP",
+    food: {x: 10, y: 5},
+    snake: [
+        { x: 10, y: 12 },
+        { x: 10, y: 13 },
+        { x: 10, y: 14 },
+        { x: 10, y: 15 },
+        { x: 10, y: 16 },
+        { x: 10, y: 17 },
+        { x: 10, y: 18 },
+        { x: 11, y: 18 },
+        { x: 12, y: 18 },
+        { x: 13, y: 18 },
+        { x: 14, y: 18 },
+        { x: 15, y: 18 },
+        { x: 15, y: 19 },
+        { x: 15, y: 20 },
+        { x: 15, y: 21 },
+        { x: 15, y: 22 },
+        { x: 15, y: 23 },
+        { x: 15, y: 24 },
+      ],
+}

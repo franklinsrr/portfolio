@@ -1,0 +1,48 @@
+---
+import GameInformation from "@components/snake/GameInformation.astro"
+import Console from "@components/snake/Console"
+---
+<section id="console" class="bg-black snake-game-wrapper rounded-lg relative shadow-inset-custom z-30">
+    <img src="screw-icon.svg" alt="screw" width="24px" height="24px" class="absolute top-2 left-2 opacity-70"/>
+    <img src="screw-icon.svg" alt="screw" width="24px" height="24px" class="absolute top-2 right-2 opacity-70"/>
+    <img src="screw-icon.svg" alt="screw" width="24px" height="24px" class="absolute bottom-2 left-2 opacity-70"/>
+    <img src="screw-icon.svg" alt="screw" width="24px" height="24px" class="absolute bottom-2 right-2 opacity-70"/>
+    
+    <section class="flex w-full h-full items-center justify-center">
+        <div class="w-[50%] h-full">
+            <Console client:only="react"/>
+        </div>
+        <div class="w-[50%] h-full flex justify-center items-center">
+            <GameInformation/>
+        </div>
+    </section>
+</section>
+
+<style> 
+    .snake-game-wrapper {
+        background: linear-gradient(180deg,#237b6d,rgba(67,217,173,.13));
+        z-index: 20;
+    }
+
+@media screen and (min-width: 1537px) {
+    #console{
+        height: 475px;
+        width: 530px;
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1536px){
+    #console{
+        height: 370px;
+        width: 420px;
+        padding: 24px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #console{
+       opacity: 0;
+    }
+}
+</style>
