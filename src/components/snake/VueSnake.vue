@@ -127,13 +127,13 @@
         </div>
       </div>
       <!-- skip -->
-      <NuxtLink
+      <a
         id="skip-btn"
-        to="/about-me"
+        href="/about"
         class="font-fire-code-retina flex hover:bg-white/20"
       >
         skip
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>
