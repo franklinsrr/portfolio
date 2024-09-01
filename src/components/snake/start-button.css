@@ -1,30 +1,30 @@
 #start-button {
-    padding-inline: 16px;
-    padding-block: 8px;
-    border-radius: 10px;
-    border: 1px solid black;
-    background-color: #FEA55F;
-    color: black;
-    cursor: pointer;
-    position: absolute;
+  padding-inline: 16px;
+  padding-block: 8px;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: #fea55f;
+  color: black;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20%;
+  left: 25%;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+}
+
+#start-button:hover {
+  background-color: rgb(255, 178, 119);
+}
+
+@media (min-width: 1024px) and (max-width: 1536px) {
+  #start-button {
+    padding-inline: 12px;
+    padding-block: 6px;
+    border-radius: 8px;
     bottom: 20%;
     left: 25%;
-    font-size: 0.875rem; /* 14px */
-    line-height: 1.25rem; /* 20px */
+    font-size: 0.75rem; /* 14px */
+    line-height: 1rem; /* 20px */
   }
-
-  #start-button:hover {
-    background-color: rgb(255, 178, 119);
-  }
-
-  @media (min-width: 1024px) and (max-width: 1536px) {
-    #start-button {
-      padding-inline: 12px;
-      padding-block: 6px;
-      border-radius: 8px;
-      bottom: 20%;
-      left: 25%;
-      font-size: 0.75rem; /* 14px */
-      line-height: 1rem; /* 20px */
-    }
-  }
+}
