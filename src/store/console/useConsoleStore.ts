@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { IConsoleAction, IConsoleState, ICord } from "@interfaces/console";
+import type { IConsoleAction, IConsoleState } from "@interfaces/console";
 import { INITIAL_STATE } from "@constants/console";
 
 export const useConsoleStore = create<IConsoleState & IConsoleAction>()(

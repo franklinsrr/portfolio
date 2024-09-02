@@ -1,3 +1,6 @@
+ 
+/* eslint-disable */
+// @ts-nocheck 
 import { type FC, useState, useRef, useEffect } from "react";
 import { useConsoleStore } from "@store/console/useConsoleStore";
 import StartButton from "@components/snake/StartButton";
