@@ -1,4 +1,4 @@
-import { type FC, useState, useEffect } from "react";
+import { type FC, useState, useEffect, useId } from "react";
 import "./commentCodeStyles.css";
 
 interface Props {
@@ -7,9 +7,10 @@ interface Props {
 
 const CommentCode: FC<Props> = ({ code }) => {
   const [lines, setLines] = useState(0);
+  const [numbersOfLines, setNumbersOfLines] = useState<number[]>([]);
+  const lineCustomContainerId = useId();
 
   useEffect(() => {
-    // Initial call to updateLines
     updateLines();
 
     window.addEventListener("resize", updateLines);
@@ -18,17 +19,22 @@ const CommentCode: FC<Props> = ({ code }) => {
     };
   }, []);
 
+  useEffect(()=> {
+    setNumbersOfLines(Array.from({ length: lines }).map((_, i) => i + 1));
+  }, [lines])
+
+
   const updateLines = () => {
-    const textContainer = document.querySelector(
-      ".line-custom-container",
+    setLines(0);
+    const textContainer = document.getElementById(
+      `${lineCustomContainerId.toString()}`,
     ) as HTMLElement;
     const styles = window.getComputedStyle(textContainer);
     const lineHeight = parseInt(styles.lineHeight);
     const maxHeight = textContainer?.offsetHeight;
     setLines(Math.ceil(maxHeight / lineHeight) + 1);
+   
   };
-
-  const numbersOfLines = Array.from({ length: lines }).map((_, i) => i + 1);
 
   return (
     <div className="code-container flex font-fire-code-retina text-secondary-gray font-custom-big-size">
@@ -50,6 +56,7 @@ const CommentCode: FC<Props> = ({ code }) => {
       </div>
       <div className="text-container">
         <p
+          id={lineCustomContainerId}
           className="font-fire-code-retina text-secondary-gray line-custom-container mt-[22px]"
           dangerouslySetInnerHTML={{ __html: code }}
         ></p>
