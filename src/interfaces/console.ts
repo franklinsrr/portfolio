@@ -1,5 +1,5 @@
- /* eslint-disable */
-// @ts-nocheck 
+/* eslint-disable */
+// @ts-nocheck
 export interface ICord {
   x: number | null;
   y: number | null;

@@ -19,10 +19,9 @@ const CommentCode: FC<Props> = ({ code }) => {
     };
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     setNumbersOfLines(Array.from({ length: lines }).map((_, i) => i + 1));
-  }, [lines])
-
+  }, [lines]);
 
   const updateLines = () => {
     setLines(0);
@@ -33,7 +32,6 @@ const CommentCode: FC<Props> = ({ code }) => {
     const lineHeight = parseInt(styles.lineHeight);
     const maxHeight = textContainer?.offsetHeight;
     setLines(Math.ceil(maxHeight / lineHeight) + 1);
-   
   };
 
   return (
