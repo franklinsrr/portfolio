@@ -1,144 +1,170 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import TypingText from '@components/automata/Typing-text';
+import Layout from "@layouts/Layout.astro";
+import TypingText from "@components/automata/Typing-text";
 import VueSnake from "@components/snake/VueSnake.vue";
 ---
 
 <Layout title="Franklin Rodriguez">
-		<main class="h-[calc(100vh-64px-100px)] flex flex-col content-center justify-self-center w-full text-white">
-			<div class=""></div>
-			<div class="">
-				<section class="titles">
-					<div class="head-titles">
-						<h2 class="font-fire-code-retina text-xl z-20">Hi All, I am</h2>
-						<h1 class="font-fire-code-normal text-6xl py-4 z-20">Franklin Rodriguez</h1>
-							<TypingText client:only="react"  
-							repeat={false}
-							text='> FullStack Developer'
-							className='text-indigo-600 text-3xl font-fire-code-retina pb-10 z-20 typing-title'
-							/>
-					</div>
-					<div>
-						<p class="text-secondary-gray font-custom-normal-size font-fire-code-retina pt-10 pb-2 z-20 game-info-text">// complete the game to continue</p>
-						<p class="text-secondary-gray font-custom-normal-size font-fire-code-retina pb-3 desktop-github-profile">// you can also see it on my Github page</p>
-						<p class="text-secondary-gray font-custom-normal-size font-fire-code-retina pb-3 mobile-github-profile">// find my profile on Github:</p>
-						<div class="font-fire-code-medium font-custom-normal-size">
-							<span class="text-indigo-500 z-20">const</span>
-							<span class="text-teal-400 z-20">githublink</span>
-							<span class="z-20">=</span>
-							<a class="text-red-400 underline z-20" href="https://github.com/franklinssr">https://github.com/franklinssr</a>
-						</div>
-					</div>
-				</section>
-			</div>
-			<div class="game-console relative">
-				<div class="css-blurry-gradient-green"></div>
-				<div class="css-blurry-gradient-blue"></div>
-				<VueSnake client:only="vue"/>
-			</div>
-		</div>
-		</main>
+  <main
+    class="h-[calc(100vh-64px-100px)] flex flex-col content-center justify-self-center w-full text-white"
+  >
+    <div class=""></div>
+    <div class="">
+      <section class="titles">
+        <div class="head-titles">
+          <h2 class="font-fire-code-retina text-xl z-20">Hi All, I am</h2>
+          <h1 class="font-fire-code-normal text-6xl py-4 z-20">
+            Franklin Rodriguez
+          </h1>
+          <TypingText
+            client:only="react"
+            repeat={false}
+            text="> FullStack Developer"
+            className="text-indigo-600 text-3xl font-fire-code-retina pb-10 z-20 typing-title"
+          />
+        </div>
+        <div>
+          <p
+            class="text-secondary-gray font-custom-normal-size font-fire-code-retina pt-10 pb-2 z-20 game-info-text"
+          >
+            // complete the game to continue
+          </p>
+          <p
+            class="text-secondary-gray font-custom-normal-size font-fire-code-retina pb-3 desktop-github-profile"
+          >
+            // you can also see it on my Github page
+          </p>
+          <p
+            class="text-secondary-gray font-custom-normal-size font-fire-code-retina pb-3 mobile-github-profile"
+          >
+            // find my profile on Github:
+          </p>
+          <div class="font-fire-code-medium font-custom-normal-size">
+            <span class="text-indigo-500 z-20">const</span>
+            <span class="text-teal-400 z-20">githublink</span>
+            <span class="z-20">=</span>
+            <a
+              class="text-red-400 underline z-20"
+              href="https://github.com/franklinssr"
+              >https://github.com/franklinsr</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="game-console relative">
+      <div class="css-blurry-gradient-green"></div>
+      <div class="css-blurry-gradient-blue"></div>
+      <VueSnake client:only="vue" />
+    </div>
+  </main>
 </Layout>
 
 <style>
-@media screen and (min-width: 1325px) {
-	main{
-		display: grid;
-		grid-template-columns: 310px  repeat(2, minmax(0, 1fr));
-		.titles{
-			margin-top: 7%;
-		}
-	}
-}
-
-@media screen and (min-width: 1024px) and (max-width: 1324px) {
-	main{
-		display: grid;
-		grid-template-columns: 7%  repeat(2, minmax(0, 1fr));
-	}
-}
-
-@media screen and (max-width: 1023px) {
-	main{
-		display: grid;
-		grid-template-columns: 7%  repeat(2, minmax(0, 1fr));
-		.titles{
-			text-wrap: nowrap;
-		}
-	}
-}
-
-.mobile-github-profile{
-	display: none;
-}
-
-@media screen and (max-width: 787px) {
-	main{
-		padding: 28px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		.titles{
-			text-wrap: wrap;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			height: calc(100vh - 200px - 100px);
-
-			h1{
-				font-size: 3rem;
-			}
-
-			.typing-title{
-				color: #43d9ad;
-				font-size: 20px;
-
-			}
-
-			.game-info-text{
-				display: none;
-			}
-
-			.desktop-github-profile{
-				display: none;
-			}
-
-			.mobile-github-profile{
-				display: block;
-			}
-		}
-	}
-
-	.game-console{
-		position: absolute;
-	}
-}
-
-.css-blurry-gradient-green{
-        border-radius: 100% 0 0;
-        filter: blur(100px);
-        height: 400px;
-        opacity: .5;
-        position: fixed;
-        right: 35%;
-        rotate: 20deg;
-        top: 10%;
-        width: 400px;
-        background: radial-gradient(circle at 50% 50%, #43d9ad, rgba(76, 0, 255, 0));
-        z-index: 10;
+  @media screen and (min-width: 1325px) {
+    main {
+      display: grid;
+      grid-template-columns: 310px repeat(2, minmax(0, 1fr));
+      .titles {
+        margin-top: 7%;
+      }
     }
-    
-.css-blurry-gradient-blue{
-        border-radius: 100% 50% 100% 0;
-        bottom: 10%;
-        height: 500px;
-        opacity: .7;
-        position: fixed;
-        right: 10%;
-        width: 500px;
-        background: radial-gradient(circle at 50% 50%, #4d5bce, rgba(76, 0, 255, 0));
-        filter: blur(70px);
-        z-index: 10;
-}
+  }
 
+  @media screen and (min-width: 1024px) and (max-width: 1324px) {
+    main {
+      display: grid;
+      grid-template-columns: 7% repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    main {
+      display: grid;
+      grid-template-columns: 7% repeat(2, minmax(0, 1fr));
+      .titles {
+        text-wrap: nowrap;
+      }
+    }
+  }
+
+  .mobile-github-profile {
+    display: none;
+  }
+
+  @media screen and (max-width: 787px) {
+    main {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .titles {
+        text-wrap: wrap;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100vh - 200px - 100px);
+
+        h1 {
+          font-size: 3rem;
+        }
+
+        .typing-title {
+          color: #43d9ad;
+          font-size: 20px;
+        }
+
+        .game-info-text {
+          display: none;
+        }
+
+        .desktop-github-profile {
+          display: none;
+        }
+
+        .mobile-github-profile {
+          display: block;
+        }
+      }
+    }
+
+    .game-console {
+      position: absolute;
+    }
+  }
+
+  .css-blurry-gradient-green {
+    border-radius: 100% 0 0;
+    filter: blur(100px);
+    height: 400px;
+    opacity: 0.5;
+    position: fixed;
+    right: 35%;
+    rotate: 20deg;
+    top: 10%;
+    width: 400px;
+    background: radial-gradient(
+      circle at 50% 50%,
+      #43d9ad,
+      rgba(76, 0, 255, 0)
+    );
+    z-index: 10;
+  }
+
+  .css-blurry-gradient-blue {
+    border-radius: 100% 50% 100% 0;
+    bottom: 10%;
+    height: 500px;
+    opacity: 0.7;
+    position: fixed;
+    right: 10%;
+    width: 500px;
+    background: radial-gradient(
+      circle at 50% 50%,
+      #4d5bce,
+      rgba(76, 0, 255, 0)
+    );
+    filter: blur(70px);
+    z-index: 10;
+  }
 </style>
