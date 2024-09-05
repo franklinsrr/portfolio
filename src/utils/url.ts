@@ -1,13 +1,12 @@
 import { thirdLevelLinks, ABOUT_SECTIONS } from "@constants/links";
 
 export function getMenuLinksByPathname(pathname: string) {
-  const path = removeTrailingSlash(pathname);
   const links = Object.entries(thirdLevelLinks);
 
   if (
-    path === "/about" ||
-    path.includes("/about/personal-info") ||
-    path === "/about/"
+    pathname === "/about" ||
+    pathname.includes("/about/personal-info") ||
+    pathname === "/about/"
   ) {
     return thirdLevelLinks["/about"];
   }
@@ -17,19 +16,19 @@ export function getMenuLinksByPathname(pathname: string) {
   );
 
   const menuLinks = restLinks.find((link) => {
-    if (path.includes(link[0])) return link;
+    if (pathname.includes(link[0])) return link;
   });
 
   return menuLinks?.[1];
 }
 
 export function getThirdMenuTitle(pathname: string) {
-  const path = removeTrailingSlash(pathname);
+  
   const menus = Object.entries(ABOUT_SECTIONS);
 
-  const subPage = path.split("/")[path?.split("/")?.length - 1];
+  const subPage = pathname.split("/")[pathname?.split("/")?.length - 1];
 
-  if (path === "/about" || path?.includes("/about/personal-info")) {
+  if (pathname === "/about" || pathname === "/about/" || pathname?.includes("/about/personal-info")) {
     if (subPage === "about") {
       return ["personal-info", "bio"];
     }
@@ -43,7 +42,7 @@ export function getThirdMenuTitle(pathname: string) {
       menu[1].url !== "/about/",
   );
 
-  const menu = filteredMenu.find((item) => path.includes(item[1].url));
+  const menu = filteredMenu.find((item) => pathname.includes(item[1].url));
 
   if (subPage === "hobbies") {
     return [menu?.[1].title, "sports"];
@@ -56,6 +55,7 @@ export function getThirdMenuTitle(pathname: string) {
   return [menu?.[1].title, subPage];
 }
 
-function removeTrailingSlash(url: string): string {
+
+export function removeTrailingSlash(url: string): string {
   return url.endsWith('/') ? url.slice(0, -1) : url;
 }
