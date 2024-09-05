@@ -1,29 +1,44 @@
 ---
-import Link from "./Link.astro"
-import twitterSVG from "@assets/twitter-icon.svg"
-import facebookSVG from "@assets/facebook-icon.svg"
-import githubSVG from "@assets/github-icon.svg"
+import Link from "./Link.astro";
+import twitterSVG from "@assets/twitter-icon.svg";
+import facebookSVG from "@assets/facebook-icon.svg";
+import githubSVG from "@assets/github-icon.svg";
 ---
 
-<header class="h-[49px] w-full flex justify-between border-t-[1px] border-t-linescolor">
-    <div class="flex">
-            <Link rightBorder>
-                Find me in:
-            </Link>
-        <Link link="https://x.com/FranklinSerif" blank rightBorder>
-            <img src={twitterSVG.src} alt="twitter" width="20px" height="20px" class="opacity-40  group-hover:opacity-100">
-        </Link>
-        <Link link="https://www.facebook.com/franklinjnth/" blank rightBorder>
-            <img src={facebookSVG.src} alt="facebook" width="20px" height="20px" class="opacity-40  group-hover:opacity-100">
-        </Link>
-    </div>
-    <div>
-        <Link link="https://github.com/franklinsrr" blank leftBorder>
-        franklinsrr &nbsp; <img src={githubSVG.src} alt="github" width="20px" height="20px">
-        </Link>
-    </div>
+<header
+  class="h-[49px] w-full flex justify-between border-t-[1px] border-t-linescolor"
+>
+  <div class="flex">
+    <Link rightBorder> Find me in: </Link>
+    <Link link="https://x.com/FranklinSerif" blank rightBorder>
+      <img
+        src={twitterSVG.src}
+        alt="twitter"
+        width="20px"
+        height="20px"
+        class="opacity-40 group-hover:opacity-100"
+      />
+    </Link>
+    <Link link="https://www.facebook.com/franklinjnth/" blank rightBorder>
+      <img
+        src={facebookSVG.src}
+        alt="facebook"
+        width="20px"
+        height="20px"
+        class="opacity-40 group-hover:opacity-100"
+      />
+    </Link>
+  </div>
+  <div>
+    <Link link="https://github.com/franklinsrr" blank leftBorder>
+      franklinsrr &nbsp; <img
+        src={githubSVG.src}
+        alt="github"
+        width="20px"
+        height="20px"
+      />
+    </Link>
+  </div>
 </header>
 
-<style>
-
-</style>
+<style></style>
