@@ -1,7 +1,7 @@
 ---
-import SecondLevelMenu from "@components/about/SecondLevelMenu.astro"
-import ThirdLevelMenus from "@components/about/ThirdLevelMenus"
-import CodeSnippetsAside from "@components/CodeSnippetsAside.astro"
+import SecondLevelMenu from "@components/about/SecondLevelMenu.astro";
+import ThirdLevelMenus from "@components/about/ThirdLevelMenus";
+import CodeSnippetsAside from "@components/CodeSnippetsAside.astro";
 import MobilePageTitle from "@components/menu/MobilePageTitle.astro";
 import PageHeader from "@components/PageHeader";
 import Scrollbar from "@components/scrollbar.astro";
@@ -9,26 +9,28 @@ import Scrollbar from "@components/scrollbar.astro";
 const pathname = Astro.url.pathname;
 ---
 
-<div class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout w-full">
-    <aside class="flex h-full lg:w-[310px] border-r-[1px] border-r-linescolor w-full flex-wrap lg:flex-nowrap">
-        <MobilePageTitle>
-            _about-menu
-        </MobilePageTitle>
-        <SecondLevelMenu/>
-        <ThirdLevelMenus pathname={pathname} client:only="react" /> 
-    </aside>
-    <main class="flex w-full">
-        <div class="pt-5 lg:pt-0 w-full">
-            <PageHeader pathname={pathname}/>
-            <section class="flex w-full">
-                <main class="flex flex-col w-full">
-                    <slot/>
-                </main>
-                <Scrollbar/>
-            </section>
-            </div>
-    </main>
-    <aside class="">
-        <CodeSnippetsAside/>
-    </aside>
+<div
+  class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout w-full"
+>
+  <aside
+    class="flex h-full lg:w-[310px] border-r-[1px] border-r-linescolor w-full flex-wrap lg:flex-nowrap"
+  >
+    <MobilePageTitle> _about-menu </MobilePageTitle>
+    <SecondLevelMenu />
+    <ThirdLevelMenus pathname={pathname} client:only="react" />
+  </aside>
+  <main class="flex w-full">
+    <div class="pt-5 lg:pt-0 w-full">
+      <PageHeader pathname={pathname} client:only="react" />
+      <section class="flex w-full">
+        <main class="flex flex-col w-full">
+          <slot />
+        </main>
+        <Scrollbar />
+      </section>
+    </div>
+  </main>
+  <aside class="">
+    <CodeSnippetsAside />
+  </aside>
 </div>
