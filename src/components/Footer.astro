@@ -9,7 +9,9 @@ import githubSVG from "@assets/github-icon.svg";
   class="h-[49px] w-full flex justify-between border-t-[1px] border-t-linescolor"
 >
   <div class="flex">
-    <Link rightBorder> Find me in: </Link>
+    <span class="hidden-super-xs">
+      <Link rightBorder> Find me in: </Link>
+    </span>
     <Link link="https://x.com/FranklinSerif" blank rightBorder>
       <img
         src={twitterSVG.src}
@@ -41,4 +43,10 @@ import githubSVG from "@assets/github-icon.svg";
   </div>
 </header>
 
-<style></style>
+<style>
+  @media only screen and (max-width: 529px) {
+    .hidden-super-xs {
+      display: none;
+    }
+  }
+</style>
