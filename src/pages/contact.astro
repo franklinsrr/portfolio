@@ -1,17 +1,21 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import ContactLayout from '@layouts/contact/ContactLayout.astro';
-import ContactForm from '@components/contact/ContactForm';
+import Layout from "@layouts/Layout.astro";
+import ContactLayout from "@layouts/contact/ContactLayout.astro";
+import ContactForm from "@components/contact/ContactForm";
 ---
 
 <Layout title="Franklin Rodriguez">
-	<ContactLayout>
-		<div class="flex flex-col items-center ">
-			<ContactForm client:only="react"/>
-		</div>
-	</ContactLayout>
+  <ContactLayout>
+    <div class="flex flex-col items-center">
+      <ContactForm client:only="react" />
+    </div>
+  </ContactLayout>
 </Layout>
 
-<style>
-	
+<style is:global>
+  @media only screen and (max-width: 529px) {
+    .contact-super-xs {
+      padding-inline: 20px;
+    }
+  }
 </style>

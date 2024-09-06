@@ -23,7 +23,7 @@ button.addEventListener ( 'click' ), () => {
     `;
 
   return (
-    <div className="border-l-[1px] border-l-linescolor flex justify-center lg:py-28 py-10">
+    <div className="border-l-[1px] border-l-linescolor flex justify-center lg:py-28 py-10 aside-contact-super-xs">
       <CodeFormat code={code} fontSize={14} showLineNumber />
     </div>
   );

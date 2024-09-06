@@ -34,7 +34,7 @@ const ContactForm: FC = () => {
 
   return (
     <form
-      className="max-w-96 lg:py-40 py-10 w-full flex flex-col gap-6"
+      className="max-w-96 lg:py-40 py-10 w-full flex flex-col gap-6 contact-super-xs"
       autoComplete="off"
     >
       <Input name="name" type="text" required onChange={handleChangeInput} />

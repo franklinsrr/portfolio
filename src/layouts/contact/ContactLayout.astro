@@ -1,22 +1,32 @@
 ---
-import ContactMenu from "@components/menu/ContactMenu"
-import MobilePageTitle from "@components/menu/MobilePageTitle.astro"
-import AsideContact from "@components/contact/AsideContact"
-import PageHeader from "@components/PageHeader"
+import ContactMenu from "@components/menu/ContactMenu";
+import MobilePageTitle from "@components/menu/MobilePageTitle.astro";
+import AsideContact from "@components/contact/AsideContact";
+import PageHeader from "@components/PageHeader";
 ---
 
-<div class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout w-full">
-    <aside class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full ">
-        <MobilePageTitle>
-            _contacts
-        </MobilePageTitle>
-        <ContactMenu client:load socialMediaShow/>
-    </aside> 
-    <section class="flex flex-col">  
-        <div class="pt-5 lg:pt-0">
-            <PageHeader client:only="react" title="contact" pathname="/contact"/>
-        </div>      
-        <slot/>
-    </section>
-    <AsideContact client:only="react"/>
+<div
+  class="lg:h-[calc(100vh-64px-100px)] flex flex-col lg:grid lg:grid-cols-mainLayout w-full"
+>
+  <aside
+    class="lg:w-[310px] lg:border-r-[1px] lg:border-r-linescolor sm:w-full"
+  >
+    <MobilePageTitle> _contacts </MobilePageTitle>
+    <ContactMenu client:load socialMediaShow />
+  </aside>
+  <section class="flex flex-col">
+    <div class="pt-5 lg:pt-0">
+      <PageHeader client:only="react" title="contact" pathname="/contact" />
+    </div>
+    <slot />
+  </section>
+  <AsideContact client:only="react" />
 </div>
+
+<style is:global>
+  @media only screen and (max-width: 529px) {
+    .aside-contact-super-xs {
+      padding-inline: 20px;
+    }
+  }
+</style>
