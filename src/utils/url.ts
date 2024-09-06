@@ -23,12 +23,15 @@ export function getMenuLinksByPathname(pathname: string) {
 }
 
 export function getThirdMenuTitle(pathname: string) {
-  
   const menus = Object.entries(ABOUT_SECTIONS);
 
   const subPage = pathname.split("/")[pathname?.split("/")?.length - 1];
 
-  if (pathname === "/about" || pathname === "/about/" || pathname?.includes("/about/personal-info")) {
+  if (
+    pathname === "/about" ||
+    pathname === "/about/" ||
+    pathname?.includes("/about/personal-info")
+  ) {
     if (subPage === "about") {
       return ["personal-info", "bio"];
     }
@@ -55,7 +58,6 @@ export function getThirdMenuTitle(pathname: string) {
   return [menu?.[1].title, subPage];
 }
 
-
 export function removeTrailingSlash(url: string): string {
-  return url.endsWith('/') ? url.slice(0, -1) : url;
+  return url.endsWith("/") ? url.slice(0, -1) : url;
 }
