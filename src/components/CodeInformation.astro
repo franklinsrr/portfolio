@@ -2,22 +2,47 @@
 import startSVG from "@assets/start-icon.svg";
 import bubleSVG from "@assets/buble-icon.svg";
 ---
+
 <section class="flex items-center justify-between gap-2">
-    <div class="flex items-center gap-2">
-        <img src="/avatar.jpeg" alt="avatar" width="32px" height="32px" class="rounded-full">
-        <section class="flex flex-col justify-center gap-1">
-            <span class="font-fire-code-bold text-xs text-indigo-500">@franklinsrr</span>
-            <span class="font-fire-code-retina text-xs text-secondary-gray">Created 18 months ago</span>
-        </section>
+  <div class="flex items-center gap-2">
+    <img
+      src="/avatar.jpeg"
+      alt="avatar"
+      width="32px"
+      height="32px"
+      class="rounded-full"
+    />
+    <section class="flex flex-col justify-center gap-1">
+      <span class="font-fire-code-bold text-xs text-indigo-500"
+        >@franklinsrr</span
+      >
+      <span class="font-fire-code-retina text-xs text-secondary-gray"
+        >Created 18 months ago</span
+      >
+    </section>
+  </div>
+  <div class="flex gap-4 details-super-xs">
+    <div class="flex gap-2">
+      <img src={bubleSVG.src} alt="details" width="16px" height="16px" />
+      <span
+        class="font-fire-code-retina text-xs text-secondary-gray hover:text-white"
+        >details</span
+      >
     </div>
-    <div class="flex gap-4">
-        <div class="flex gap-2">
-            <img src={bubleSVG.src} alt="details" width="16px" height="16px">
-            <span class="font-fire-code-retina text-xs text-secondary-gray hover:text-white">details</span>
-        </div>
-        <div class="flex gap-2">
-            <img src={startSVG.src} alt="starts" width="16px" height="16px">
-            <span class="font-fire-code-retina text-xs text-secondary-gray hover:text-white">starts</span>
-        </div>
+    <div class="flex gap-2">
+      <img src={startSVG.src} alt="starts" width="16px" height="16px" />
+      <span
+        class="font-fire-code-retina text-xs text-secondary-gray hover:text-white"
+        >starts</span
+      >
     </div>
+  </div>
 </section>
+
+<style>
+  @media only screen and (max-width: 529px) {
+    .details-super-xs {
+      flex-direction: column;
+    }
+  }
+</style>
