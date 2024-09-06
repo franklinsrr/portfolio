@@ -1,19 +1,23 @@
 ---
-import Layout from '@layouts/Layout.astro';
-import ProjectLayout from '@layouts/projects/ProjectLayout.astro';
-import ProjectList from '@components/ProjectList';
-import ProjectHeader from "@components/projects/ProjectHeader"
+import Layout from "@layouts/Layout.astro";
+import ProjectLayout from "@layouts/projects/ProjectLayout.astro";
+import ProjectList from "@components/ProjectList";
+import ProjectHeader from "@components/projects/ProjectHeader";
 ---
 
 <Layout title="Franklin Rodriguez">
-	<ProjectLayout>
-		<ProjectHeader client:only="react"/>
-		<div class="w-full flex justify-center items-center h-full">
-			<ProjectList client:only="react"/>
-		</div>
-		</ProjectLayout>	
+  <ProjectLayout>
+    <ProjectHeader client:only="react" />
+    <div class="w-full flex justify-center items-center h-full">
+      <ProjectList client:only="react" />
+    </div>
+  </ProjectLayout>
 </Layout>
 
-<style>
-	
+<style is:global>
+  @media only screen and (max-width: 529px) {
+    .project-list-super-xs {
+      padding-inline: 20px;
+    }
+  }
 </style>
