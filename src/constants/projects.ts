@@ -8,7 +8,7 @@ export const PROJECTS_LIST: Project[] = [
     description: "a sanke game made with vanilla Javascript/Typescript",
     tech: Tech.React,
     image: "/snake-game.png",
-    repo: "https://github.com/franklinsrr/snake-game",
+    repo: "https://github.com/franklinserif/snake-game",
     link: "https://snake-game-ten-rho.vercel.app/",
   },
   {
